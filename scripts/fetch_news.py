@@ -8,7 +8,7 @@ from pathlib import Path
 load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
 API_KEY = os.getenv("NEWSAPI_KEY")
 
-def fetch_headlines(company="Tesla", page_size=50):
+def fetch_headlines(company="Tesla", page_size=100):
     url = "https://newsapi.org/v2/everything"
     params = {
         "q": company,
