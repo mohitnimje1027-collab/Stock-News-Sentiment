@@ -1,37 +1,49 @@
 import os
 import requests
 import json
+from pathlib import Path
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 
-# Load API key from .env file
-from pathlib import Path
 load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
 API_KEY = os.getenv("NEWSAPI_KEY")
 
-def fetch_headlines(company="Tesla", page_size=100):
+def fetch_headlines(company="Tesla", days_back=20):
     url = "https://newsapi.org/v2/everything"
-    params = {
-        "q": company,
-        "apiKey": API_KEY,
-        "language": "en",
-        "sortBy": "publishedAt",
-        "pageSize": page_size
-    }
+    all_articles = []
 
-    response = requests.get(url, params=params)
-    data = response.json()
+    today = datetime.utcnow().date()
 
-    if data.get("status") != "ok":
-        print("Error:", data)
-        return
+    for i in range(days_back):
+        day = today - timedelta(days=i+1)  # skip today, NewsAPI free tier often blocks very recent day
+        date_str = day.strftime("%Y-%m-%d")
 
-    articles = data["articles"]
-    print(f"Fetched {len(articles)} articles for '{company}'")
+        params = {
+            "q": company,
+            "apiKey": API_KEY,
+            "language": "en",
+            "from": date_str,
+            "to": date_str,
+            "sortBy": "publishedAt",
+            "pageSize": 20
+        }
 
-    # Save to a JSON file in the data folder
+        response = requests.get(url, params=params)
+        data = response.json()
+
+        if data.get("status") != "ok":
+            print(f"Error on {date_str}:", data.get("message"))
+            continue
+
+        articles = data.get("articles", [])
+        print(f"{date_str}: {len(articles)} articles")
+        all_articles.extend(articles)
+
+    print(f"\nTotal fetched: {len(all_articles)} articles across {days_back} days")
+
     data_path = Path(__file__).resolve().parent.parent / "data" / "tesla_headlines.json"
     with open(data_path, "w", encoding="utf-8") as f:
-        json.dump(articles, f, indent=2)
+        json.dump(all_articles, f, indent=2)
 
     print(f"Saved to {data_path}")
 
