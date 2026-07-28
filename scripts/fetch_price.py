@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 from datetime import datetime, timedelta
 
-def fetch_prices(ticker="TSLA", days_back=25):
+def fetch_prices(ticker="TSLA", days_back=35):
     end_date = datetime.utcnow().date()
     start_date = end_date - timedelta(days=days_back)
 

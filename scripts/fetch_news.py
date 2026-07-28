@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
 API_KEY = os.getenv("NEWSAPI_KEY")
 
-def fetch_headlines(company="Tesla", days_back=20):
+def fetch_headlines(company="Tesla", days_back=29):
     url = "https://newsapi.org/v2/everything"
     all_articles = []
 
