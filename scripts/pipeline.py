@@ -21,6 +21,7 @@ def run_company(name, ticker, days_back=29, price_days_back=35):
 
     # 1. Fetch news
     all_articles = []
+    error_count = 0
     today = datetime.utcnow().date()
     for i in range(days_back):
         day = today - timedelta(days=i+1)
@@ -31,9 +32,13 @@ def run_company(name, ticker, days_back=29, price_days_back=35):
         d = r.json()
         if d.get("status") != "ok":
             print(f"  {date_str}: error - {d.get('message')}")
+            error_count += 1
             continue
         arts = d.get("articles", [])
         all_articles.extend(arts)
+
+    if error_count > 0:
+        print(f"  WARNING: {error_count} day(s) hit API errors — data is incomplete")
     print(f"  Fetched {len(all_articles)} raw articles")
 
     # 2. Clean + dedupe
@@ -102,4 +107,5 @@ def run_company(name, ticker, days_back=29, price_days_back=35):
     with open(folder / "correlation.json", "w", encoding="utf-8") as f:
         json.dump(result, f, indent=2)
 
+    result["had_errors"] = error_count > 0
     return result

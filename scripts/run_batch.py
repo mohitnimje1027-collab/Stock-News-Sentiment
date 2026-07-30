@@ -19,11 +19,11 @@ else:
     for c in batch:
         result = run_company(c["name"], c["ticker"])
         # Only mark done if we actually got enough real data
-        if result and result.get("num_days", 0) >= 5:
+        if result and result.get("num_days", 0) >= 5 and not result.get("had_errors", False):
             c["done"] = True
             print(f"  Marked {c['name']} as done ({result['num_days']} days)")
         else:
-            print(f"  WARNING: {c['name']} did not get enough data — will retry next run")
+            print(f"  WARNING: {c['name']} incomplete (errors or too little data) — will retry next run")
 
     with open(config_path, "w", encoding="utf-8") as f:
         json.dump(companies, f, indent=2)

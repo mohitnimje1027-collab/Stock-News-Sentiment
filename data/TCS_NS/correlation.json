@@ -1,0 +1,7 @@
+{
+  "name": "TCS",
+  "ticker": "TCS.NS",
+  "num_days": 9,
+  "same_day_correlation": -0.0586,
+  "lagged_correlation": -0.6433
+}
