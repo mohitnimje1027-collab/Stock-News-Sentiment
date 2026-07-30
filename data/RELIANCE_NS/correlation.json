@@ -1,0 +1,7 @@
+{
+  "name": "Reliance Industries",
+  "ticker": "RELIANCE.NS",
+  "num_days": 21,
+  "same_day_correlation": 0.4401,
+  "lagged_correlation": -0.2125
+}
