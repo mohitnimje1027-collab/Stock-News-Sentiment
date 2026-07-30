@@ -1,0 +1,8 @@
+{
+  "name": "Amazon",
+  "ticker": "AMZN",
+  "category": null,
+  "num_days": 0,
+  "same_day_correlation": null,
+  "lagged_correlation": null
+}

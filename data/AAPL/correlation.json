@@ -1,0 +1,7 @@
+{
+  "name": "Apple",
+  "ticker": "AAPL",
+  "num_days": 20,
+  "same_day_correlation": 0.2862,
+  "lagged_correlation": 0.0284
+}

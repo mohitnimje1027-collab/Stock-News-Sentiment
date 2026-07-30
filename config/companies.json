@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Tesla",
+    "ticker": "TSLA",
+    "category": "top",
+    "done": true
+  },
+  {
+    "name": "Adani Power",
+    "ticker": "ADANIPOWER.NS",
+    "category": "underdog",
+    "done": true
+  },
+  {
+    "name": "Apple",
+    "ticker": "AAPL",
+    "category": "top",
+    "done": true
+  },
+  {
+    "name": "Microsoft",
+    "ticker": "MSFT",
+    "category": "top",
+    "done": true
+  },
+  {
+    "name": "Amazon",
+    "ticker": "AMZN",
+    "category": "top",
+    "done": false
+  },
+  {
+    "name": "Reliance Industries",
+    "ticker": "RELIANCE.NS",
+    "category": "top",
+    "done": false
+  },
+  {
+    "name": "TCS",
+    "ticker": "TCS.NS",
+    "category": "top",
+    "done": false
+  },
+  {
+    "name": "Infosys",
+    "ticker": "INFY.NS",
+    "category": "top",
+    "done": false
+  },
+  {
+    "name": "Alphabet",
+    "ticker": "GOOGL",
+    "category": "top",
+    "done": false
+  },
+  {
+    "name": "Nvidia",
+    "ticker": "NVDA",
+    "category": "top",
+    "done": false
+  },
+  {
+    "name": "HDFC Bank",
+    "ticker": "HDFCBANK.NS",
+    "category": "top",
+    "done": false
+  },
+  {
+    "name": "ITC",
+    "ticker": "ITC.NS",
+    "category": "top",
+    "done": false
+  },
+  {
+    "name": "Adani Enterprises",
+    "ticker": "ADANIENT.NS",
+    "category": "top",
+    "done": false
+  },
+  {
+    "name": "Zomato",
+    "ticker": "ZOMATO.NS",
+    "category": "underdog",
+    "done": false
+  },
+  {
+    "name": "Paytm",
+    "ticker": "PAYTM.NS",
+    "category": "underdog",
+    "done": false
+  },
+  {
+    "name": "IRCTC",
+    "ticker": "IRCTC.NS",
+    "category": "underdog",
+    "done": false
+  },
+  {
+    "name": "Nazara Technologies",
+    "ticker": "NAZARA.NS",
+    "category": "underdog",
+    "done": false
+  },
+  {
+    "name": "Route Mobile",
+    "ticker": "ROUTE.NS",
+    "category": "underdog",
+    "done": false
+  },
+  {
+    "name": "Happiest Minds",
+    "ticker": "HAPPSTMNDS.NS",
+    "category": "underdog",
+    "done": false
+  },
+  {
+    "name": "Latent View Analytics",
+    "ticker": "LATENTVIEW.NS",
+    "category": "underdog",
+    "done": false
+  },
+  {
+    "name": "Tejas Networks",
+    "ticker": "TEJASNET.NS",
+    "category": "underdog",
+    "done": false
+  },
+  {
+    "name": "CarTrade Tech",
+    "ticker": "CARTRADE.NS",
+    "category": "underdog",
+    "done": false
+  },
+  {
+    "name": "Rossari Biotech",
+    "ticker": "ROSSARI.NS",
+    "category": "underdog",
+    "done": false
+  },
+  {
+    "name": "Yatra Online",
+    "ticker": "YTRA",
+    "category": "underdog",
+    "done": false
+  },
+  {
+    "name": "MapmyIndia",
+    "ticker": "MAPMYINDIA.NS",
+    "category": "underdog",
+    "done": false
+  }
+]
