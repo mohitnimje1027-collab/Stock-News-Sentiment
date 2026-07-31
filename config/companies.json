@@ -51,7 +51,7 @@
     "name": "Alphabet",
     "ticker": "GOOGL",
     "category": "top",
-    "done": false
+    "done": true
   },
   {
     "name": "Nvidia",
