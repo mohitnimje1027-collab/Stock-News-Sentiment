@@ -1,0 +1,7 @@
+{
+  "name": "ITC",
+  "ticker": "ITC.NS",
+  "num_days": 20,
+  "same_day_correlation": -0.5827,
+  "lagged_correlation": 0.1933
+}

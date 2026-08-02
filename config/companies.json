@@ -57,19 +57,19 @@
     "name": "Nvidia",
     "ticker": "NVDA",
     "category": "top",
-    "done": false
+    "done": true
   },
   {
     "name": "HDFC Bank",
     "ticker": "HDFCBANK.NS",
     "category": "top",
-    "done": false
+    "done": true
   },
   {
     "name": "ITC",
     "ticker": "ITC.NS",
     "category": "top",
-    "done": false
+    "done": true
   },
   {
     "name": "Adani Enterprises",
