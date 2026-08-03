@@ -75,13 +75,13 @@
     "name": "Adani Enterprises",
     "ticker": "ADANIENT.NS",
     "category": "top",
-    "done": false
+    "done": true
   },
   {
-    "name": "Zomato",
-    "ticker": "ZOMATO.NS",
+    "name": "Zomato (Eternal)",
+    "ticker": "ETERNAL.NS",
     "category": "underdog",
-    "done": false
+    "done": true
   },
   {
     "name": "Paytm",

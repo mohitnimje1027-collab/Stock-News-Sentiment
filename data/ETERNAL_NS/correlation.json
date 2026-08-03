@@ -1,0 +1,7 @@
+{
+  "name": "Zomato (Eternal)",
+  "ticker": "ETERNAL.NS",
+  "num_days": 12,
+  "same_day_correlation": 0.2354,
+  "lagged_correlation": 0.3
+}
