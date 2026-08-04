@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2026-07-08",
+    "avg_sentiment": 0.4019,
+    "article_count": 1,
+    "open": 300.0,
+    "close": 295.55,
+    "pct_change": -1.4833
+  },
+  {
+    "date": "2026-07-13",
+    "avg_sentiment": 0.0,
+    "article_count": 1,
+    "open": 304.0,
+    "close": 307.3,
+    "pct_change": 1.0855
+  },
+  {
+    "date": "2026-08-03",
+    "avg_sentiment": 0.1562,
+    "article_count": 4,
+    "open": NaN,
+    "close": NaN,
+    "pct_change": NaN
+  }
+]

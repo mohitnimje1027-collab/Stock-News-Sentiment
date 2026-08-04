@@ -87,17 +87,17 @@
     "name": "Paytm",
     "ticker": "PAYTM.NS",
     "category": "underdog",
-    "done": false
+    "done": true
   },
   {
     "name": "IRCTC",
     "ticker": "IRCTC.NS",
     "category": "underdog",
-    "done": false
+    "done": true
   },
   {
-    "name": "Nazara Technologies",
-    "ticker": "NAZARA.NS",
+    "name": "Delhivery",
+    "ticker": "DELHIVERY.NS",
     "category": "underdog",
     "done": false
   },
