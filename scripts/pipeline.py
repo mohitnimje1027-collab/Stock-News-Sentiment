@@ -93,10 +93,28 @@ def run_company(name, ticker, days_back=29, price_days_back=35):
                    "same_day_correlation": None, "lagged_correlation": None}
     else:
         merged_sorted = sorted(merged, key=lambda x: x["date"])
-        sentiments = [m["avg_sentiment"] for m in merged_sorted]
-        changes = [m["pct_change"] for m in merged_sorted]
-        same_day = float(np.corrcoef(sentiments, changes)[0, 1])
-        lagged = float(np.corrcoef(sentiments[:-1], changes[1:])[0, 1])
+        # Filter out any rows with NaN/missing values before correlating
+        clean_rows = [m for m in merged_sorted
+                      if m.get("avg_sentiment") is not None and m.get("pct_change") is not None
+                      and not (isinstance(m["avg_sentiment"], float) and np.isnan(m["avg_sentiment"]))
+                      and not (isinstance(m["pct_change"], float) and np.isnan(m["pct_change"]))]
+
+        if len(clean_rows) < len(merged_sorted):
+            print(f"  Filtered out {len(merged_sorted) - len(clean_rows)} row(s) with missing values")
+
+        sentiments = [m["avg_sentiment"] for m in clean_rows]
+        changes = [m["pct_change"] for m in clean_rows]
+
+        if len(clean_rows) < 3:
+            print("  Not enough clean data after filtering — skipping correlation")
+            result = {"name": name, "ticker": ticker, "num_days": len(clean_rows),
+                       "same_day_correlation": None, "lagged_correlation": None}
+        else:
+            same_day = float(np.corrcoef(sentiments, changes)[0, 1])
+            lagged = float(np.corrcoef(sentiments[:-1], changes[1:])[0, 1])
+            result = {"name": name, "ticker": ticker, "num_days": len(clean_rows),
+                       "same_day_correlation": round(same_day, 4), "lagged_correlation": round(lagged, 4)}
+            print(f"  Same-day corr: {same_day:.4f} | Lagged corr: {lagged:.4f}")
         result = {"name": name, "ticker": ticker, "num_days": len(merged),
                    "same_day_correlation": round(same_day, 4), "lagged_correlation": round(lagged, 4)}
         print(f"  Same-day corr: {same_day:.4f} | Lagged corr: {lagged:.4f}")

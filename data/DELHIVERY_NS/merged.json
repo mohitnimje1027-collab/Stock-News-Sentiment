@@ -22,5 +22,13 @@
     "open": 487.95,
     "close": 470.0,
     "pct_change": -3.6787
+  },
+  {
+    "date": "2026-08-04",
+    "avg_sentiment": 0.2009,
+    "article_count": 2,
+    "open": NaN,
+    "close": NaN,
+    "pct_change": NaN
   }
 ]
