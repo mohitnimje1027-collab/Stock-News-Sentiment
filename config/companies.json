@@ -99,13 +99,13 @@
     "name": "Delhivery",
     "ticker": "DELHIVERY.NS",
     "category": "underdog",
-    "done": false
+    "done": true
   },
   {
     "name": "Route Mobile",
     "ticker": "ROUTE.NS",
     "category": "underdog",
-    "done": false
+    "done": true
   },
   {
     "name": "Happiest Minds",
@@ -117,7 +117,7 @@
     "name": "Latent View Analytics",
     "ticker": "LATENTVIEW.NS",
     "category": "underdog",
-    "done": false
+    "done": true
   },
   {
     "name": "Tejas Networks",
