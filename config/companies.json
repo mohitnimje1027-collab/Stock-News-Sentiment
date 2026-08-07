@@ -123,17 +123,17 @@
     "name": "Tejas Networks",
     "ticker": "TEJASNET.NS",
     "category": "underdog",
-    "done": false
+    "done": true
   },
   {
     "name": "CarTrade Tech",
     "ticker": "CARTRADE.NS",
     "category": "underdog",
-    "done": false
+    "done": true
   },
   {
-    "name": "Rossari Biotech",
-    "ticker": "ROSSARI.NS",
+    "name": "Angel One",
+    "ticker": "ANGELONE.NS",
     "category": "underdog",
     "done": false
   },

@@ -1,0 +1,7 @@
+{
+  "name": "CarTrade Tech",
+  "ticker": "CARTRADE.NS",
+  "num_days": 6,
+  "same_day_correlation": -0.2606,
+  "lagged_correlation": -0.0991
+}

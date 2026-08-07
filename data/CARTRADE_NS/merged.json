@@ -1,0 +1,50 @@
+[
+  {
+    "date": "2026-07-13",
+    "avg_sentiment": 0.0,
+    "article_count": 1,
+    "open": 2850.0,
+    "close": 2799.3,
+    "pct_change": -1.7789
+  },
+  {
+    "date": "2026-07-15",
+    "avg_sentiment": 0.0,
+    "article_count": 1,
+    "open": 2915.0,
+    "close": 2808.2,
+    "pct_change": -3.6638
+  },
+  {
+    "date": "2026-07-22",
+    "avg_sentiment": 0.0,
+    "article_count": 1,
+    "open": 2731.0,
+    "close": 2809.7,
+    "pct_change": 2.8817
+  },
+  {
+    "date": "2026-07-27",
+    "avg_sentiment": 0.1012,
+    "article_count": 2,
+    "open": 2677.0,
+    "close": 2978.5,
+    "pct_change": 11.2626
+  },
+  {
+    "date": "2026-07-28",
+    "avg_sentiment": 0.0,
+    "article_count": 1,
+    "open": 2960.0,
+    "close": 2962.7,
+    "pct_change": 0.0912
+  },
+  {
+    "date": "2026-07-29",
+    "avg_sentiment": 0.4905,
+    "article_count": 4,
+    "open": 2989.8,
+    "close": 2855.7,
+    "pct_change": -4.4853
+  }
+]

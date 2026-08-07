@@ -1,0 +1,7 @@
+{
+  "name": "Tejas Networks",
+  "ticker": "TEJASNET.NS",
+  "num_days": 5,
+  "same_day_correlation": 0.0509,
+  "lagged_correlation": -0.6592
+}
