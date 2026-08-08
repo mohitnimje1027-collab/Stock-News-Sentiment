@@ -135,18 +135,13 @@
     "name": "Angel One",
     "ticker": "ANGELONE.NS",
     "category": "underdog",
-    "done": false
+    "done": true
   },
   {
     "name": "Yatra Online",
     "ticker": "YTRA",
     "category": "underdog",
-    "done": false
+    "done": true
   },
-  {
-    "name": "MapmyIndia",
-    "ticker": "MAPMYINDIA.NS",
-    "category": "underdog",
-    "done": false
-  }
+  {"name": "IEX", "ticker": "IEX.NS", "category": "underdog", "done": false},
 ]

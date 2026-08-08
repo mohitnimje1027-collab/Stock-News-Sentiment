@@ -1,0 +1,7 @@
+{
+  "name": "Yatra Online",
+  "ticker": "YTRA",
+  "num_days": 13,
+  "same_day_correlation": 0.3543,
+  "lagged_correlation": -0.0961
+}

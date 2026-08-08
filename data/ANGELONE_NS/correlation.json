@@ -1,7 +1,7 @@
 {
   "name": "Angel One",
   "ticker": "ANGELONE.NS",
-  "num_days": 9,
-  "same_day_correlation": 0.0035,
-  "lagged_correlation": -0.0865
+  "num_days": 21,
+  "same_day_correlation": -0.2664,
+  "lagged_correlation": -0.0936
 }
