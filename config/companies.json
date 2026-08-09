@@ -143,5 +143,10 @@
     "category": "underdog",
     "done": true
   },
-  {"name": "IEX", "ticker": "IEX.NS", "category": "underdog", "done": false},
+  {
+    "name": "IEX",
+    "ticker": "IEX.NS",
+    "category": "underdog",
+    "done": true
+  }
 ]
