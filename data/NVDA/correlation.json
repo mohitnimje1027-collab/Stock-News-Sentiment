@@ -1,7 +1,7 @@
 {
   "name": "Nvidia",
   "ticker": "NVDA",
-  "num_days": 20,
-  "same_day_correlation": -0.0291,
-  "lagged_correlation": -0.0525
+  "num_days": 11,
+  "same_day_correlation": -0.1555,
+  "lagged_correlation": -0.0287
 }

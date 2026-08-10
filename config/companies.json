@@ -3,150 +3,150 @@
     "name": "Tesla",
     "ticker": "TSLA",
     "category": "top",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Adani Power",
     "ticker": "ADANIPOWER.NS",
     "category": "underdog",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Apple",
     "ticker": "AAPL",
     "category": "top",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Microsoft",
     "ticker": "MSFT",
     "category": "top",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Amazon",
     "ticker": "AMZN",
     "category": "top",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Reliance Industries",
     "ticker": "RELIANCE.NS",
     "category": "top",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "TCS",
     "ticker": "TCS.NS",
     "category": "top",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Infosys",
     "ticker": "INFY.NS",
     "category": "top",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Alphabet",
     "ticker": "GOOGL",
     "category": "top",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Nvidia",
     "ticker": "NVDA",
     "category": "top",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "HDFC Bank",
     "ticker": "HDFCBANK.NS",
     "category": "top",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "ITC",
     "ticker": "ITC.NS",
     "category": "top",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Adani Enterprises",
     "ticker": "ADANIENT.NS",
     "category": "top",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Zomato (Eternal)",
     "ticker": "ETERNAL.NS",
     "category": "underdog",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Paytm",
     "ticker": "PAYTM.NS",
     "category": "underdog",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "IRCTC",
     "ticker": "IRCTC.NS",
     "category": "underdog",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Delhivery",
     "ticker": "DELHIVERY.NS",
     "category": "underdog",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Route Mobile",
     "ticker": "ROUTE.NS",
     "category": "underdog",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Happiest Minds",
     "ticker": "HAPPSTMNDS.NS",
     "category": "underdog",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Latent View Analytics",
     "ticker": "LATENTVIEW.NS",
     "category": "underdog",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Tejas Networks",
     "ticker": "TEJASNET.NS",
     "category": "underdog",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "CarTrade Tech",
     "ticker": "CARTRADE.NS",
     "category": "underdog",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Angel One",
     "ticker": "ANGELONE.NS",
     "category": "underdog",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "Yatra Online",
     "ticker": "YTRA",
     "category": "underdog",
-    "done": true
+    "last_updated": "2026-08-10"
   },
   {
     "name": "IEX",
     "ticker": "IEX.NS",
     "category": "underdog",
-    "done": true
+    "last_updated": "2026-08-10"
   }
 ]

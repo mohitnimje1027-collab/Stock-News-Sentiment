@@ -1,50 +1,98 @@
 [
   {
     "date": "2026-07-13",
-    "avg_sentiment": 0.0,
-    "article_count": 1,
+    "avg_sentiment": 0.3484,
+    "article_count": 6,
     "open": 2850.0,
     "close": 2799.3,
     "pct_change": -1.7789
   },
   {
-    "date": "2026-07-15",
+    "date": "2026-07-14",
     "avg_sentiment": 0.0,
+    "article_count": 2,
+    "open": 2793.0,
+    "close": 2895.0,
+    "pct_change": 3.652
+  },
+  {
+    "date": "2026-07-15",
+    "avg_sentiment": 0.5267,
     "article_count": 1,
     "open": 2915.0,
     "close": 2808.2,
     "pct_change": -3.6638
   },
   {
-    "date": "2026-07-22",
+    "date": "2026-07-21",
     "avg_sentiment": 0.0,
     "article_count": 1,
-    "open": 2731.0,
-    "close": 2809.7,
-    "pct_change": 2.8817
+    "open": 2740.0,
+    "close": 2726.0,
+    "pct_change": -0.5109
+  },
+  {
+    "date": "2026-07-23",
+    "avg_sentiment": -0.0181,
+    "article_count": 2,
+    "open": 2809.7,
+    "close": 2692.2,
+    "pct_change": -4.1819
   },
   {
     "date": "2026-07-27",
-    "avg_sentiment": 0.1012,
-    "article_count": 2,
+    "avg_sentiment": 0.2392,
+    "article_count": 13,
     "open": 2677.0,
     "close": 2978.5,
     "pct_change": 11.2626
   },
   {
     "date": "2026-07-28",
-    "avg_sentiment": 0.0,
-    "article_count": 1,
+    "avg_sentiment": 0.1101,
+    "article_count": 4,
     "open": 2960.0,
     "close": 2962.7,
     "pct_change": 0.0912
   },
   {
     "date": "2026-07-29",
-    "avg_sentiment": 0.4905,
-    "article_count": 4,
+    "avg_sentiment": 0.3075,
+    "article_count": 8,
     "open": 2989.8,
     "close": 2855.7,
     "pct_change": -4.4853
+  },
+  {
+    "date": "2026-07-30",
+    "avg_sentiment": 0.0,
+    "article_count": 1,
+    "open": 2854.0,
+    "close": 2791.7,
+    "pct_change": -2.1829
+  },
+  {
+    "date": "2026-08-04",
+    "avg_sentiment": 0.0,
+    "article_count": 1,
+    "open": 2804.0,
+    "close": 2805.4,
+    "pct_change": 0.0499
+  },
+  {
+    "date": "2026-08-05",
+    "avg_sentiment": 0.0,
+    "article_count": 2,
+    "open": 2805.4,
+    "close": 2842.2,
+    "pct_change": 1.3118
+  },
+  {
+    "date": "2026-08-06",
+    "avg_sentiment": 0.8481,
+    "article_count": 1,
+    "open": 2837.1,
+    "close": 2788.4,
+    "pct_change": -1.7165
   }
 ]

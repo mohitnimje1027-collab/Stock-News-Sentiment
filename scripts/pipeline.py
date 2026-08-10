@@ -19,27 +19,31 @@ def run_company(name, ticker, days_back=29, price_days_back=35):
     folder.mkdir(parents=True, exist_ok=True)
     print(f"\n=== {name} ({ticker}) ===")
 
-    # 1. Fetch news
-    all_articles = []
-    error_count = 0
-    today = datetime.utcnow().date()
-    for i in range(days_back):
-        day = today - timedelta(days=i+1)
-        date_str = day.strftime("%Y-%m-%d")
-        params = {"q": name, "apiKey": API_KEY, "language": "en",
-                  "from": date_str, "to": date_str, "sortBy": "publishedAt", "pageSize": 20}
-        r = requests.get("https://newsapi.org/v2/everything", params=params)
-        d = r.json()
-        if d.get("status") != "ok":
-            print(f"  {date_str}: error - {d.get('message')}")
-            error_count += 1
-            continue
-        arts = d.get("articles", [])
-        all_articles.extend(arts)
+    # 1. Fetch news via Google News RSS (unlimited, no API key)
+    import feedparser
+    from urllib.parse import quote
 
-    if error_count > 0:
-        print(f"  WARNING: {error_count} day(s) hit API errors — data is incomplete")
-    print(f"  Fetched {len(all_articles)} raw articles")
+    today = datetime.utcnow().date()
+    query = quote(f"{name} stock")
+    rss_url = f"https://news.google.com/rss/search?q={query}+when:30d&hl=en-IN&gl=IN&ceid=IN:en"
+    feed = feedparser.parse(rss_url)
+
+    all_articles = []
+    for entry in feed.entries:
+        title = entry.get("title", "")
+        published = entry.get("published_parsed")
+        if published:
+            date_str = datetime(*published[:6]).strftime("%Y-%m-%d")
+        else:
+            date_str = None
+        all_articles.append({
+            "title": title,
+            "publishedAt": date_str + "T00:00:00Z" if date_str else None,
+            "source": {"name": entry.get("source", {}).get("title", "Google News") if hasattr(entry, "source") else "Google News"}
+        })
+
+    error_count = 0  # RSS doesn't hit quota errors
+    print(f"  Fetched {len(all_articles)} raw articles (via RSS)")
 
     # 2. Clean + dedupe
     seen, cleaned = set(), []
