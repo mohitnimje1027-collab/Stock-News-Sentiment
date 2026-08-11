@@ -34,4 +34,5 @@ with open(config_path, "w", encoding="utf-8") as f:
 print("\nRegenerating summary and chart...")
 subprocess.run([sys.executable, str(Path(__file__).parent / "summary.py")])
 subprocess.run([sys.executable, str(Path(__file__).parent / "visualize.py")])
+subprocess.run([sys.executable, str(Path(__file__).parent / "generate_report.py")])
 print("\nRefresh cycle complete.")

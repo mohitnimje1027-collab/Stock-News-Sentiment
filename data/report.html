@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Stock News Sentiment vs Price Movement — Report</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; color: #222; }
+  h1 { color: #1f3864; }
+  .updated { color: #666; font-size: 0.9em; margin-bottom: 10px; }
+  button { background: #1f3864; color: white; border: none; padding: 12px 24px; font-size: 1em;
+            border-radius: 6px; cursor: pointer; margin-bottom: 25px; }
+  button:hover { background: #16294d; }
+  button:disabled { background: #999; cursor: not-allowed; }
+  img { max-width: 100%; margin: 20px 0; border: 1px solid #ddd; border-radius: 4px; }
+  .company-card { background: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 6px;
+                    padding: 14px 18px; margin-bottom: 12px; }
+  .company-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .company-name { font-weight: bold; font-size: 1.1em; }
+  .badge { color: white; font-size: 0.75em; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; }
+  #status { color: #1f3864; font-style: italic; }
+</style>
+</head>
+<body>
+  <h1>Stock News Sentiment vs Price Movement</h1>
+  <p class="updated">Last updated: 2026-08-11 09:56 UTC</p>
+
+  <button id="fetchBtn" onclick="fetchNews()">Fetch Latest News & Refresh</button>
+  <p id="status"></p>
+
+  <h2>Chart</h2>
+  <img src="/data/correlation_chart.png" alt="Correlation chart across 25 companies">
+
+  <h2>What Each Stock Shows</h2>
+  <div id="companies">
+    
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Nvidia</span>
+            <span class="badge" style="background:#1f77b4">top</span>
+          </div>
+          <p>On days with more positive news about Nvidia, its stock price tended to fall. This pattern was moderate, and it's based on a small sample (only 11 trading days), so treat it as a rough signal, not a rule.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Yatra Online</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about Yatra Online, its stock price tended to fall. This pattern was weak, and it's based on a small sample (only 11 trading days), so treat it as a rough signal, not a rule.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Infosys</span>
+            <span class="badge" style="background:#1f77b4">top</span>
+          </div>
+          <p>On days with more positive news about Infosys, its stock price tended to fall. This pattern was weak (based on 15 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">IEX</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about IEX, its stock price tended to fall. This pattern was very weak (based on 17 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">CarTrade Tech</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about CarTrade Tech, its stock price tended to fall. This pattern was very weak (based on 12 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Zomato (Eternal)</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about Zomato (Eternal), its stock price tended to fall. This pattern was very weak (based on 15 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">ITC</span>
+            <span class="badge" style="background:#1f77b4">top</span>
+          </div>
+          <p>On days with more positive news about ITC, its stock price tended to fall. This pattern was very weak (based on 18 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">TCS</span>
+            <span class="badge" style="background:#1f77b4">top</span>
+          </div>
+          <p>On days with more positive news about TCS, its stock price tended to fall. This pattern was very weak (based on 20 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">HDFC Bank</span>
+            <span class="badge" style="background:#1f77b4">top</span>
+          </div>
+          <p>On days with more positive news about HDFC Bank, its stock price tended to fall. This pattern was very weak (based on 13 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Amazon</span>
+            <span class="badge" style="background:#1f77b4">top</span>
+          </div>
+          <p>On days with more positive news about Amazon, its stock price showed no clear pattern. This pattern was very weak, and it's based on a small sample (only 8 trading days), so treat it as a rough signal, not a rule.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Microsoft</span>
+            <span class="badge" style="background:#1f77b4">top</span>
+          </div>
+          <p>On days with more positive news about Microsoft, its stock price showed no clear pattern. This pattern was very weak, and it's based on a small sample (only 10 trading days), so treat it as a rough signal, not a rule.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Paytm</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about Paytm, its stock price showed no clear pattern. This pattern was very weak (based on 13 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Route Mobile</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about Route Mobile, its stock price showed no clear pattern. This pattern was very weak (based on 13 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">IRCTC</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about IRCTC, its stock price tended to rise. This pattern was very weak, and it's based on a small sample (only 11 trading days), so treat it as a rough signal, not a rule.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Adani Enterprises</span>
+            <span class="badge" style="background:#1f77b4">top</span>
+          </div>
+          <p>On days with more positive news about Adani Enterprises, its stock price tended to rise. This pattern was very weak (based on 18 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Adani Power</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about Adani Power, its stock price tended to rise. This pattern was very weak (based on 20 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Alphabet</span>
+            <span class="badge" style="background:#1f77b4">top</span>
+          </div>
+          <p>On days with more positive news about Alphabet, its stock price tended to rise. This pattern was weak (based on 18 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Tejas Networks</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about Tejas Networks, its stock price tended to rise. This pattern was weak, and it's based on a small sample (only 8 trading days), so treat it as a rough signal, not a rule.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Apple</span>
+            <span class="badge" style="background:#1f77b4">top</span>
+          </div>
+          <p>On days with more positive news about Apple, its stock price tended to rise. This pattern was weak (based on 12 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Latent View Analytics</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about Latent View Analytics, its stock price tended to rise. This pattern was weak (based on 14 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Happiest Minds</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about Happiest Minds, its stock price tended to rise. This pattern was moderate, and it's based on a small sample (only 11 trading days), so treat it as a rough signal, not a rule.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Delhivery</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about Delhivery, its stock price tended to rise. This pattern was moderate, and it's based on a small sample (only 10 trading days), so treat it as a rough signal, not a rule.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Reliance Industries</span>
+            <span class="badge" style="background:#1f77b4">top</span>
+          </div>
+          <p>On days with more positive news about Reliance Industries, its stock price tended to rise. This pattern was moderate (based on 16 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Angel One</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about Angel One, its stock price tended to rise. This pattern was moderate (based on 15 trading days).</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Tesla</span>
+            <span class="badge" style="background:#1f77b4">top</span>
+          </div>
+          <p>On days with more positive news about Tesla, its stock price tended to rise. This pattern was moderate (based on 15 trading days).</p>
+        </div>
+  </div>
+
+  <script>
+    function fetchNews() {
+      const btn = document.getElementById('fetchBtn');
+      const status = document.getElementById('status');
+      btn.disabled = true;
+      status.innerText = "Fetching fresh news and recalculating... this can take up to a minute.";
+      fetch('/refresh', { method: 'POST' })
+        .then(r => r.json())
+        .then(data => {
+          status.innerText = "Done! Reloading...";
+          location.reload();
+        })
+        .catch(err => {
+          status.innerText = "Something went wrong: " + err;
+          btn.disabled = false;
+        });
+    }
+  </script>
+</body>
+</html>

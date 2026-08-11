@@ -78,5 +78,13 @@
     "open": 0.84,
     "close": 0.85,
     "pct_change": 0.8333
+  },
+  {
+    "date": "2026-08-10",
+    "avg_sentiment": 0.1302,
+    "article_count": 8,
+    "open": 0.85,
+    "close": 0.85,
+    "pct_change": -0.4684
   }
 ]

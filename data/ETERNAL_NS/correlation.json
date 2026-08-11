@@ -2,6 +2,6 @@
   "name": "Zomato (Eternal)",
   "ticker": "ETERNAL.NS",
   "num_days": 15,
-  "same_day_correlation": -0.1383,
-  "lagged_correlation": -0.0363
+  "same_day_correlation": -0.0923,
+  "lagged_correlation": 0.0452
 }

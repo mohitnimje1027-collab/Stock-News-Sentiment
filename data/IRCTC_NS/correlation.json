@@ -2,6 +2,6 @@
   "name": "IRCTC",
   "ticker": "IRCTC.NS",
   "num_days": 11,
-  "same_day_correlation": 0.0753,
+  "same_day_correlation": 0.0837,
   "lagged_correlation": -0.3153
 }

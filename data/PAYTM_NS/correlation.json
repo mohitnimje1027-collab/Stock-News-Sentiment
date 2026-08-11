@@ -1,7 +1,7 @@
 {
   "name": "Paytm",
   "ticker": "PAYTM.NS",
-  "num_days": 11,
-  "same_day_correlation": -0.2084,
-  "lagged_correlation": -0.5741
+  "num_days": 13,
+  "same_day_correlation": 0.0287,
+  "lagged_correlation": -0.0918
 }

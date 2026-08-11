@@ -1,7 +1,7 @@
 {
   "name": "Route Mobile",
   "ticker": "ROUTE.NS",
-  "num_days": 12,
-  "same_day_correlation": 0.0107,
-  "lagged_correlation": 0.4781
+  "num_days": 13,
+  "same_day_correlation": 0.0481,
+  "lagged_correlation": 0.5682
 }

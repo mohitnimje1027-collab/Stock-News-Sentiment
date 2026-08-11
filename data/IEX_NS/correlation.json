@@ -1,7 +1,7 @@
 {
   "name": "IEX",
   "ticker": "IEX.NS",
-  "num_days": 15,
-  "same_day_correlation": 0.1338,
-  "lagged_correlation": 0.3399
+  "num_days": 17,
+  "same_day_correlation": -0.1976,
+  "lagged_correlation": 0.2229
 }

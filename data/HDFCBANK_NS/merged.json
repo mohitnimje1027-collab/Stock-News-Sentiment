@@ -1,8 +1,8 @@
 [
   {
     "date": "2026-07-20",
-    "avg_sentiment": 0.0515,
-    "article_count": 40,
+    "avg_sentiment": 0.0616,
+    "article_count": 39,
     "open": 790.0,
     "close": 777.6,
     "pct_change": -1.5696
@@ -25,8 +25,8 @@
   },
   {
     "date": "2026-07-23",
-    "avg_sentiment": 0.1244,
-    "article_count": 3,
+    "avg_sentiment": 0.0367,
+    "article_count": 4,
     "open": 749.4,
     "close": 747.25,
     "pct_change": -0.2869

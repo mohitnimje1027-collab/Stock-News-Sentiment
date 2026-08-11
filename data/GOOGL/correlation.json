@@ -1,7 +1,7 @@
 {
   "name": "Alphabet",
   "ticker": "GOOGL",
-  "num_days": 16,
-  "same_day_correlation": 0.2572,
-  "lagged_correlation": -0.1687
+  "num_days": 18,
+  "same_day_correlation": 0.2217,
+  "lagged_correlation": 0.0498
 }

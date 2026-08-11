@@ -1,7 +1,7 @@
 {
   "name": "Microsoft",
   "ticker": "MSFT",
-  "num_days": 9,
-  "same_day_correlation": -0.0717,
-  "lagged_correlation": 0.4744
+  "num_days": 10,
+  "same_day_correlation": 0.006,
+  "lagged_correlation": 0.5294
 }

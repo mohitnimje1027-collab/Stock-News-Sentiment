@@ -1,7 +1,7 @@
 {
   "name": "Amazon",
   "ticker": "AMZN",
-  "num_days": 7,
-  "same_day_correlation": -0.0103,
-  "lagged_correlation": -0.1626
+  "num_days": 8,
+  "same_day_correlation": -0.0075,
+  "lagged_correlation": -0.1611
 }

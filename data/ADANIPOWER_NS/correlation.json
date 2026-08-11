@@ -1,7 +1,7 @@
 {
   "name": "Adani Power",
   "ticker": "ADANIPOWER.NS",
-  "num_days": 19,
-  "same_day_correlation": 0.236,
-  "lagged_correlation": -0.0254
+  "num_days": 20,
+  "same_day_correlation": 0.1356,
+  "lagged_correlation": -0.0479
 }

@@ -1,7 +1,7 @@
 {
   "name": "Tesla",
   "ticker": "TSLA",
-  "num_days": 14,
-  "same_day_correlation": 0.5855,
-  "lagged_correlation": -0.0159
+  "num_days": 15,
+  "same_day_correlation": 0.5988,
+  "lagged_correlation": -0.0459
 }

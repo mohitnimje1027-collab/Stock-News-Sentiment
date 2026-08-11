@@ -2,6 +2,6 @@
   "name": "HDFC Bank",
   "ticker": "HDFCBANK.NS",
   "num_days": 13,
-  "same_day_correlation": -0.0425,
-  "lagged_correlation": 0.3365
+  "same_day_correlation": -0.0566,
+  "lagged_correlation": 0.2852
 }
