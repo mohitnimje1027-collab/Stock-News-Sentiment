@@ -1,0 +1,8 @@
+{
+  "name": "NIFTYBEES",
+  "ticker": "NIFTYBEES.NS",
+  "num_days": 1,
+  "same_day_correlation": null,
+  "lagged_correlation": null,
+  "positivity_index": 8.2
+}

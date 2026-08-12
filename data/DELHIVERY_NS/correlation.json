@@ -1,7 +1,8 @@
 {
   "name": "Delhivery",
   "ticker": "DELHIVERY.NS",
-  "num_days": 10,
-  "same_day_correlation": 0.4322,
-  "lagged_correlation": 0.5746
+  "num_days": 11,
+  "same_day_correlation": 0.3172,
+  "lagged_correlation": 0.2741,
+  "positivity_index": 5.8
 }

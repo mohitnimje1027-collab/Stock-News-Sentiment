@@ -2,6 +2,7 @@
   "name": "Paytm",
   "ticker": "PAYTM.NS",
   "num_days": 13,
-  "same_day_correlation": 0.0287,
-  "lagged_correlation": -0.0918
+  "same_day_correlation": -0.1431,
+  "lagged_correlation": -0.203,
+  "positivity_index": 6.2
 }

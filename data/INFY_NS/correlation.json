@@ -1,7 +1,8 @@
 {
   "name": "Infosys",
   "ticker": "INFY.NS",
-  "num_days": 15,
-  "same_day_correlation": -0.2161,
-  "lagged_correlation": -0.0008
+  "num_days": 16,
+  "same_day_correlation": -0.2271,
+  "lagged_correlation": -0.1017,
+  "positivity_index": 6.5
 }

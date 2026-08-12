@@ -1,0 +1,7 @@
+{
+  "name": "WIPRO",
+  "ticker": "WIPRO.NS",
+  "num_days": 15,
+  "same_day_correlation": -0.0873,
+  "lagged_correlation": -0.0801
+}

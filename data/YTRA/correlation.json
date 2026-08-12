@@ -1,7 +1,8 @@
 {
   "name": "Yatra Online",
   "ticker": "YTRA",
-  "num_days": 11,
-  "same_day_correlation": -0.2674,
-  "lagged_correlation": -0.1689
+  "num_days": 9,
+  "same_day_correlation": -0.2226,
+  "lagged_correlation": -0.2928,
+  "positivity_index": 4.7
 }

@@ -1,0 +1,7 @@
+{
+  "name": "BANDHANBNK",
+  "ticker": "BANDHANBNK.NS",
+  "num_days": 5,
+  "same_day_correlation": 0.224,
+  "lagged_correlation": -0.9919
+}

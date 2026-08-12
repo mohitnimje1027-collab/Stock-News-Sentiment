@@ -1,0 +1,8 @@
+{
+  "name": "GOLDBEES",
+  "ticker": "GOLDBEES.NS",
+  "num_days": 0,
+  "same_day_correlation": null,
+  "lagged_correlation": null,
+  "positivity_index": 5.0
+}

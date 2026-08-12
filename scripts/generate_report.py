@@ -18,6 +18,7 @@ def strength_label(val):
 def describe_company(r):
     same_day = r.get("same_day_correlation")
     num_days = r.get("num_days", 0)
+    positivity = r.get("positivity_index")
 
     if same_day is None:
         return f"Not enough data was available for {r['name']} to draw a conclusion."
@@ -41,6 +42,9 @@ def describe_company(r):
     else:
         sentence += f" (based on {num_days} trading days)."
 
+    if positivity is not None:
+        sentence += f" Overall, the news coverage for {r['name']} had a positivity score of {positivity}/10."
+
     return sentence
 
 def build_report_data():
@@ -53,6 +57,7 @@ def build_report_data():
             "name": r["name"],
             "category": r["category"],
             "num_days": r["num_days"],
+            "positivity_index": r.get("positivity_index"),
             "same_day": r.get("same_day_correlation"),
             "lagged": r.get("lagged_correlation"),
             "description": describe_company(r)
@@ -81,20 +86,28 @@ def generate_html():
 <meta charset="UTF-8">
 <title>Stock News Sentiment vs Price Movement — Report</title>
 <style>
-  body {{ font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; color: #222; }}
-  h1 {{ color: #1f3864; }}
-  .updated {{ color: #666; font-size: 0.9em; margin-bottom: 10px; }}
-  button {{ background: #1f3864; color: white; border: none; padding: 12px 24px; font-size: 1em;
+  body {{ font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px;
+          background: #121212; color: #e0e0e0; }}
+  h1 {{ color: #7fb3ff; }}
+  h2 {{ color: #7fb3ff; }}
+  .updated {{ color: #999; font-size: 0.9em; margin-bottom: 10px; }}
+  button {{ background: #2d5fa3; color: white; border: none; padding: 12px 24px; font-size: 1em;
             border-radius: 6px; cursor: pointer; margin-bottom: 25px; }}
-  button:hover {{ background: #16294d; }}
-  button:disabled {{ background: #999; cursor: not-allowed; }}
-  img {{ max-width: 100%; margin: 20px 0; border: 1px solid #ddd; border-radius: 4px; }}
-  .company-card {{ background: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 6px;
+  button:hover {{ background: #3a72c4; }}
+  button:disabled {{ background: #555; cursor: not-allowed; }}
+  img {{ max-width: 100%; margin: 20px 0; border: 1px solid #333; border-radius: 4px;
+         background: #fff; padding: 8px; }}
+  .company-card {{ background: #1e1e1e; border: 1px solid #333; border-radius: 6px;
                     padding: 14px 18px; margin-bottom: 12px; }}
   .company-header {{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }}
-  .company-name {{ font-weight: bold; font-size: 1.1em; }}
+  .company-name {{ font-weight: bold; font-size: 1.1em; color: #fff; }}
   .badge {{ color: white; font-size: 0.75em; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; }}
-  #status {{ color: #1f3864; font-style: italic; }}
+  #status {{ color: #7fb3ff; font-style: italic; }}
+  .search-box {{ background: #1a2634; border: 1px solid #2d5fa3; border-radius: 6px;
+                  padding: 16px 20px; margin: 25px 0; }}
+  .search-box input {{ padding: 8px 12px; margin-right: 10px; border: 1px solid #444;
+                        border-radius: 4px; width: 200px; background: #2a2a2a; color: #e0e0e0; }}
+  .search-box input::placeholder {{ color: #888; }}
 </style>
 </head>
 <body>
@@ -103,6 +116,15 @@ def generate_html():
 
   <button id="fetchBtn" onclick="fetchNews()">Fetch Latest News & Refresh</button>
   <p id="status"></p>
+
+  <div class="search-box">
+    <h2>Check a Different Stock</h2>
+    <p style="color:#666; font-size:0.9em;">You'll need the company name and its Yahoo Finance ticker symbol (e.g. "Netflix" and "NFLX", or "Wipro" and "WIPRO.NS").</p>
+    <input type="text" id="companyName" placeholder="Company name (e.g. Netflix)">
+    <input type="text" id="companyTicker" placeholder="Ticker (e.g. NFLX or WIPRO.NS)">
+    <button onclick="addCompany()">Add & Analyze</button>
+    <p id="addStatus"></p>
+  </div>
 
   <h2>Chart</h2>
   <img src="/data/correlation_chart.png" alt="Correlation chart across 25 companies">
@@ -127,6 +149,35 @@ def generate_html():
         .catch(err => {{
           status.innerText = "Something went wrong: " + err;
           btn.disabled = false;
+        }});
+    }}
+    function addCompany() {{
+      const name = document.getElementById('companyName').value.trim();
+      const ticker = document.getElementById('companyTicker').value.trim();
+      const status = document.getElementById('addStatus');
+
+      if (!name || !ticker) {{
+        status.innerText = "Please enter both a company name and ticker.";
+        return;
+      }}
+
+      status.innerText = "Fetching and analyzing " + name + "... this can take up to a minute.";
+      fetch('/add_company', {{
+        method: 'POST',
+        headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{ name: name, ticker: ticker }})
+      }})
+        .then(r => r.json())
+        .then(data => {{
+          if (data.error) {{
+            status.innerText = "Error: " + data.error;
+          }} else {{
+            status.innerText = "Done! Reloading...";
+            location.reload();
+          }}
+        }})
+        .catch(err => {{
+          status.innerText = "Something went wrong: " + err;
         }});
     }}
   </script>

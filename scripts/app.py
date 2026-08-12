@@ -23,6 +23,57 @@ def refresh():
     )
     return jsonify({"status": "done", "log": result.stdout[-2000:]})
 
+@app.route("/add_company", methods=["POST"])
+def add_company():
+    from flask import request
+    import json as json_lib
+
+    data = request.get_json()
+    name = data.get("name", "").strip()
+    ticker = data.get("ticker", "").strip()
+
+    if not name or not ticker:
+        return jsonify({"error": "Missing name or ticker"}), 400
+
+    config_path = BASE / "config" / "companies.json"
+    with open(config_path, "r", encoding="utf-8") as f:
+        companies = json_lib.load(f)
+
+    # Check if this ticker already exists
+    existing = next((c for c in companies if c["ticker"].upper() == ticker.upper()), None)
+
+    if not existing:
+        companies.append({
+            "name": name, "ticker": ticker,
+            "category": "custom", "last_updated": None
+        })
+        with open(config_path, "w", encoding="utf-8") as f:
+            json_lib.dump(companies, f, indent=2)
+
+    # Run the pipeline for just this one company
+    from pipeline import run_company
+    result = run_company(name, ticker)
+
+    if not result or result.get("num_days", 0) < 3:
+        return jsonify({"error": f"Not enough data found for {name} ({ticker}). Try a different ticker."}), 400
+
+    # Mark it as updated in config
+    from datetime import datetime
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    with open(config_path, "r", encoding="utf-8") as f:
+        companies = json_lib.load(f)
+    for c in companies:
+        if c["ticker"].upper() == ticker.upper():
+            c["last_updated"] = today
+    with open(config_path, "w", encoding="utf-8") as f:
+        json_lib.dump(companies, f, indent=2)
+
+    # Regenerate summary and chart to include the new company
+    subprocess.run([sys.executable, str(BASE / "scripts" / "summary.py")])
+    subprocess.run([sys.executable, str(BASE / "scripts" / "visualize.py")])
+
+    return jsonify({"status": "done", "company": name})
+
 if __name__ == "__main__":
     print("Starting server... open http://127.0.0.1:5000 in your browser")
     app.run(debug=True, port=5000)

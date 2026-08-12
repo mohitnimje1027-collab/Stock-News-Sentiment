@@ -1,7 +1,8 @@
 {
   "name": "Latent View Analytics",
   "ticker": "LATENTVIEW.NS",
-  "num_days": 14,
-  "same_day_correlation": 0.3499,
-  "lagged_correlation": -0.3888
+  "num_days": 16,
+  "same_day_correlation": 0.3787,
+  "lagged_correlation": -0.3425,
+  "positivity_index": 5.4
 }

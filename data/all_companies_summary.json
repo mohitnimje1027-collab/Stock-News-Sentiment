@@ -1,202 +1,251 @@
 [
   {
-    "name": "Nvidia",
-    "ticker": "NVDA",
-    "num_days": 11,
-    "same_day_correlation": -0.5926,
-    "lagged_correlation": -0.121,
-    "category": "top"
-  },
-  {
-    "name": "Yatra Online",
-    "ticker": "YTRA",
-    "num_days": 11,
-    "same_day_correlation": -0.2674,
-    "lagged_correlation": -0.1689,
+    "name": "CarTrade Tech",
+    "ticker": "CARTRADE.NS",
+    "num_days": 14,
+    "same_day_correlation": -0.2445,
+    "lagged_correlation": 0.0991,
+    "positivity_index": 5.5,
     "category": "underdog"
   },
   {
     "name": "Infosys",
     "ticker": "INFY.NS",
-    "num_days": 15,
-    "same_day_correlation": -0.2161,
-    "lagged_correlation": -0.0008,
+    "num_days": 16,
+    "same_day_correlation": -0.2271,
+    "lagged_correlation": -0.1017,
+    "positivity_index": 6.5,
     "category": "top"
   },
   {
-    "name": "IEX",
-    "ticker": "IEX.NS",
-    "num_days": 17,
-    "same_day_correlation": -0.1976,
-    "lagged_correlation": 0.2229,
-    "category": "underdog"
-  },
-  {
-    "name": "CarTrade Tech",
-    "ticker": "CARTRADE.NS",
-    "num_days": 12,
-    "same_day_correlation": -0.1862,
-    "lagged_correlation": -0.1,
+    "name": "Yatra Online",
+    "ticker": "YTRA",
+    "num_days": 9,
+    "same_day_correlation": -0.2226,
+    "lagged_correlation": -0.2928,
+    "positivity_index": 4.7,
     "category": "underdog"
   },
   {
     "name": "Zomato (Eternal)",
     "ticker": "ETERNAL.NS",
     "num_days": 15,
-    "same_day_correlation": -0.0923,
-    "lagged_correlation": 0.0452,
+    "same_day_correlation": -0.216,
+    "lagged_correlation": 0.0245,
+    "positivity_index": 5.6,
     "category": "underdog"
-  },
-  {
-    "name": "ITC",
-    "ticker": "ITC.NS",
-    "num_days": 18,
-    "same_day_correlation": -0.0739,
-    "lagged_correlation": 0.0953,
-    "category": "top"
-  },
-  {
-    "name": "TCS",
-    "ticker": "TCS.NS",
-    "num_days": 20,
-    "same_day_correlation": -0.06,
-    "lagged_correlation": 0.0925,
-    "category": "top"
-  },
-  {
-    "name": "HDFC Bank",
-    "ticker": "HDFCBANK.NS",
-    "num_days": 13,
-    "same_day_correlation": -0.0566,
-    "lagged_correlation": 0.2852,
-    "category": "top"
-  },
-  {
-    "name": "Amazon",
-    "ticker": "AMZN",
-    "num_days": 8,
-    "same_day_correlation": -0.0075,
-    "lagged_correlation": -0.1611,
-    "category": "top"
   },
   {
     "name": "Microsoft",
     "ticker": "MSFT",
-    "num_days": 10,
-    "same_day_correlation": 0.006,
-    "lagged_correlation": 0.5294,
+    "num_days": 11,
+    "same_day_correlation": -0.1879,
+    "lagged_correlation": 0.3393,
+    "positivity_index": 4.8,
     "category": "top"
   },
   {
     "name": "Paytm",
     "ticker": "PAYTM.NS",
     "num_days": 13,
-    "same_day_correlation": 0.0287,
-    "lagged_correlation": -0.0918,
+    "same_day_correlation": -0.1431,
+    "lagged_correlation": -0.203,
+    "positivity_index": 6.2,
     "category": "underdog"
   },
   {
-    "name": "Route Mobile",
-    "ticker": "ROUTE.NS",
-    "num_days": 13,
-    "same_day_correlation": 0.0481,
-    "lagged_correlation": 0.5682,
+    "name": "TCS",
+    "ticker": "TCS.NS",
+    "num_days": 18,
+    "same_day_correlation": -0.1241,
+    "lagged_correlation": 0.0474,
+    "positivity_index": 6.1,
+    "category": "top"
+  },
+  {
+    "name": "IEX",
+    "ticker": "IEX.NS",
+    "num_days": 19,
+    "same_day_correlation": -0.1114,
+    "lagged_correlation": 0.3256,
+    "positivity_index": 5.4,
     "category": "underdog"
   },
   {
     "name": "IRCTC",
     "ticker": "IRCTC.NS",
     "num_days": 11,
-    "same_day_correlation": 0.0837,
-    "lagged_correlation": -0.3153,
+    "same_day_correlation": -0.1001,
+    "lagged_correlation": -0.407,
+    "positivity_index": 5.5,
     "category": "underdog"
   },
   {
-    "name": "Adani Enterprises",
-    "ticker": "ADANIENT.NS",
-    "num_days": 18,
-    "same_day_correlation": 0.1246,
-    "lagged_correlation": -0.0346,
+    "name": "HDFC Bank",
+    "ticker": "HDFCBANK.NS",
+    "num_days": 14,
+    "same_day_correlation": -0.0933,
+    "lagged_correlation": 0.3769,
+    "positivity_index": 5.7,
+    "category": "top"
+  },
+  {
+    "name": "WIPRO",
+    "ticker": "WIPRO.NS",
+    "num_days": 15,
+    "same_day_correlation": -0.0873,
+    "lagged_correlation": -0.0801,
+    "category": "custom"
+  },
+  {
+    "name": "Nvidia",
+    "ticker": "NVDA",
+    "num_days": 11,
+    "same_day_correlation": -0.0846,
+    "lagged_correlation": -0.362,
+    "positivity_index": 5.3,
+    "category": "top"
+  },
+  {
+    "name": "Route Mobile",
+    "ticker": "ROUTE.NS",
+    "num_days": 14,
+    "same_day_correlation": 0.0138,
+    "lagged_correlation": 0.3673,
+    "positivity_index": 6.1,
+    "category": "underdog"
+  },
+  {
+    "name": "ITC",
+    "ticker": "ITC.NS",
+    "num_days": 17,
+    "same_day_correlation": 0.0272,
+    "lagged_correlation": -0.0049,
+    "positivity_index": 5.6,
+    "category": "top"
+  },
+  {
+    "name": "Apple",
+    "ticker": "AAPL",
+    "num_days": 11,
+    "same_day_correlation": 0.0643,
+    "lagged_correlation": -0.0237,
+    "positivity_index": 5.1,
+    "category": "top"
+  },
+  {
+    "name": "Tejas Networks",
+    "ticker": "TEJASNET.NS",
+    "num_days": 9,
+    "same_day_correlation": 0.0661,
+    "lagged_correlation": -0.4057,
+    "positivity_index": 6.2,
+    "category": "underdog"
+  },
+  {
+    "name": "Amazon",
+    "ticker": "AMZN",
+    "num_days": 11,
+    "same_day_correlation": 0.07,
+    "lagged_correlation": -0.2822,
+    "positivity_index": 6.1,
     "category": "top"
   },
   {
     "name": "Adani Power",
     "ticker": "ADANIPOWER.NS",
     "num_days": 20,
-    "same_day_correlation": 0.1356,
-    "lagged_correlation": -0.0479,
+    "same_day_correlation": 0.0735,
+    "lagged_correlation": -0.0655,
+    "positivity_index": 5.9,
     "category": "underdog"
   },
   {
-    "name": "Alphabet",
-    "ticker": "GOOGL",
-    "num_days": 18,
-    "same_day_correlation": 0.2217,
-    "lagged_correlation": 0.0498,
+    "name": "Adani Enterprises",
+    "ticker": "ADANIENT.NS",
+    "num_days": 17,
+    "same_day_correlation": 0.0834,
+    "lagged_correlation": 0.1748,
+    "positivity_index": 5.7,
     "category": "top"
-  },
-  {
-    "name": "Tejas Networks",
-    "ticker": "TEJASNET.NS",
-    "num_days": 8,
-    "same_day_correlation": 0.2349,
-    "lagged_correlation": -0.5747,
-    "category": "underdog"
-  },
-  {
-    "name": "Apple",
-    "ticker": "AAPL",
-    "num_days": 12,
-    "same_day_correlation": 0.2549,
-    "lagged_correlation": -0.3158,
-    "category": "top"
-  },
-  {
-    "name": "Latent View Analytics",
-    "ticker": "LATENTVIEW.NS",
-    "num_days": 14,
-    "same_day_correlation": 0.3499,
-    "lagged_correlation": -0.3888,
-    "category": "underdog"
   },
   {
     "name": "Happiest Minds",
     "ticker": "HAPPSTMNDS.NS",
-    "num_days": 11,
-    "same_day_correlation": 0.431,
-    "lagged_correlation": 0.6585,
-    "category": "underdog"
-  },
-  {
-    "name": "Delhivery",
-    "ticker": "DELHIVERY.NS",
     "num_days": 10,
-    "same_day_correlation": 0.4322,
-    "lagged_correlation": 0.5746,
+    "same_day_correlation": 0.1604,
+    "lagged_correlation": 0.2875,
+    "positivity_index": 7.7,
     "category": "underdog"
-  },
-  {
-    "name": "Reliance Industries",
-    "ticker": "RELIANCE.NS",
-    "num_days": 16,
-    "same_day_correlation": 0.4518,
-    "lagged_correlation": 0.4326,
-    "category": "top"
   },
   {
     "name": "Angel One",
     "ticker": "ANGELONE.NS",
-    "num_days": 15,
-    "same_day_correlation": 0.523,
-    "lagged_correlation": -0.3712,
+    "num_days": 17,
+    "same_day_correlation": 0.1799,
+    "lagged_correlation": -0.368,
+    "positivity_index": 6.7,
+    "category": "underdog"
+  },
+  {
+    "name": "BANDHANBNK",
+    "ticker": "BANDHANBNK.NS",
+    "num_days": 5,
+    "same_day_correlation": 0.224,
+    "lagged_correlation": -0.9919,
+    "category": "custom"
+  },
+  {
+    "name": "Alphabet",
+    "ticker": "GOOGL",
+    "num_days": 17,
+    "same_day_correlation": 0.2667,
+    "lagged_correlation": -0.5149,
+    "positivity_index": 5.3,
+    "category": "top"
+  },
+  {
+    "name": "Reliance Industries",
+    "ticker": "RELIANCE.NS",
+    "num_days": 17,
+    "same_day_correlation": 0.3083,
+    "lagged_correlation": 0.434,
+    "positivity_index": 5.7,
+    "category": "top"
+  },
+  {
+    "name": "Delhivery",
+    "ticker": "DELHIVERY.NS",
+    "num_days": 11,
+    "same_day_correlation": 0.3172,
+    "lagged_correlation": 0.2741,
+    "positivity_index": 5.8,
+    "category": "underdog"
+  },
+  {
+    "name": "ADANIGREEN",
+    "ticker": "ADANIGREEN.NS",
+    "num_days": 14,
+    "same_day_correlation": 0.3378,
+    "lagged_correlation": -0.0749,
+    "category": "custom"
+  },
+  {
+    "name": "Latent View Analytics",
+    "ticker": "LATENTVIEW.NS",
+    "num_days": 16,
+    "same_day_correlation": 0.3787,
+    "lagged_correlation": -0.3425,
+    "positivity_index": 5.4,
     "category": "underdog"
   },
   {
     "name": "Tesla",
     "ticker": "TSLA",
-    "num_days": 15,
-    "same_day_correlation": 0.5988,
-    "lagged_correlation": -0.0459,
+    "num_days": 16,
+    "same_day_correlation": 0.534,
+    "lagged_correlation": 0.0783,
+    "positivity_index": 4.9,
     "category": "top"
   }
 ]

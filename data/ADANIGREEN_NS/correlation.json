@@ -1,0 +1,7 @@
+{
+  "name": "ADANIGREEN",
+  "ticker": "ADANIGREEN.NS",
+  "num_days": 14,
+  "same_day_correlation": 0.3378,
+  "lagged_correlation": -0.0749
+}

@@ -69,6 +69,10 @@ def run_company(name, ticker, days_back=29, price_days_back=35):
             daily[a["date"]].append(a["sentiment_score"])
     daily_avg = [{"date": d, "avg_sentiment": round(sum(s)/len(s), 4), "article_count": len(s)}
                  for d, s in sorted(daily.items())]
+    if daily_avg:
+        overall_avg_sentiment = sum(d["avg_sentiment"] for d in daily_avg) / len(daily_avg)
+    else:
+        overall_avg_sentiment = 0
 
     # 5. Fetch price
     start = (today - timedelta(days=price_days_back)).strftime("%Y-%m-%d")
@@ -93,8 +97,10 @@ def run_company(name, ticker, days_back=29, price_days_back=35):
 
     if len(merged) < 3:
         print("  Not enough merged data to correlate — skipping correlation")
-        result = {"name": name, "ticker": ticker, "category": None, "num_days": len(merged),
-                   "same_day_correlation": None, "lagged_correlation": None}
+        positivity_index = round((overall_avg_sentiment + 1) * 5, 1)  # converts -1..+1 scale to 0..10
+        result = {"name": name, "ticker": ticker, "num_days": len(merged),
+                    "same_day_correlation": None, "lagged_correlation": None,
+                    "positivity_index": positivity_index}
     else:
         merged_sorted = sorted(merged, key=lambda x: x["date"])
         # Filter out any rows with NaN/missing values before correlating
@@ -116,12 +122,12 @@ def run_company(name, ticker, days_back=29, price_days_back=35):
         else:
             same_day = float(np.corrcoef(sentiments, changes)[0, 1])
             lagged = float(np.corrcoef(sentiments[:-1], changes[1:])[0, 1])
+            positivity_index = round((overall_avg_sentiment + 1) * 5, 1)  # converts -1..+1 scale to 0..10
             result = {"name": name, "ticker": ticker, "num_days": len(clean_rows),
-                       "same_day_correlation": round(same_day, 4), "lagged_correlation": round(lagged, 4)}
+                       "same_day_correlation": round(same_day, 4), "lagged_correlation": round(lagged, 4),
+                       "positivity_index": positivity_index}
             print(f"  Same-day corr: {same_day:.4f} | Lagged corr: {lagged:.4f}")
-        result = {"name": name, "ticker": ticker, "num_days": len(merged),
-                   "same_day_correlation": round(same_day, 4), "lagged_correlation": round(lagged, 4)}
-        print(f"  Same-day corr: {same_day:.4f} | Lagged corr: {lagged:.4f}")
+        
 
     # Save everything for this company
     with open(folder / "merged.json", "w", encoding="utf-8") as f:

@@ -1,7 +1,8 @@
 {
   "name": "Reliance Industries",
   "ticker": "RELIANCE.NS",
-  "num_days": 16,
-  "same_day_correlation": 0.4518,
-  "lagged_correlation": 0.4326
+  "num_days": 17,
+  "same_day_correlation": 0.3083,
+  "lagged_correlation": 0.434,
+  "positivity_index": 5.7
 }
