@@ -1,0 +1,9 @@
+flask
+requests
+python-dotenv
+vaderSentiment
+yfinance
+numpy
+matplotlib
+feedparser
+gunicorn
