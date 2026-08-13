@@ -1,0 +1,8 @@
+{
+  "name": "HCLTECH",
+  "ticker": "HCLTECH.NS",
+  "num_days": 15,
+  "same_day_correlation": -0.4225,
+  "lagged_correlation": 0.1797,
+  "positivity_index": 6.1
+}

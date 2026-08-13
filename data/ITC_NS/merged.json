@@ -17,16 +17,16 @@
   },
   {
     "date": "2026-07-16",
-    "avg_sentiment": 0.2544,
-    "article_count": 10,
+    "avg_sentiment": 0.341,
+    "article_count": 8,
     "open": 277.0,
     "close": 279.35,
     "pct_change": 0.8484
   },
   {
     "date": "2026-07-17",
-    "avg_sentiment": 0.1881,
-    "article_count": 3,
+    "avg_sentiment": 0.5681,
+    "article_count": 2,
     "open": 279.35,
     "close": 280.7,
     "pct_change": 0.4833
@@ -56,14 +56,6 @@
     "pct_change": 1.3951
   },
   {
-    "date": "2026-07-27",
-    "avg_sentiment": 0.0,
-    "article_count": 1,
-    "open": 287.75,
-    "close": 285.85,
-    "pct_change": -0.6603
-  },
-  {
     "date": "2026-07-29",
     "avg_sentiment": -0.0997,
     "article_count": 3,
@@ -73,35 +65,43 @@
   },
   {
     "date": "2026-07-30",
-    "avg_sentiment": 0.5554,
-    "article_count": 2,
+    "avg_sentiment": 0.1494,
+    "article_count": 3,
     "open": 286.1,
     "close": 285.05,
     "pct_change": -0.367
   },
   {
     "date": "2026-07-31",
-    "avg_sentiment": 0.1817,
-    "article_count": 15,
+    "avg_sentiment": 0.1927,
+    "article_count": 17,
     "open": 285.55,
     "close": 281.0,
     "pct_change": -1.5934
   },
   {
     "date": "2026-08-03",
-    "avg_sentiment": 0.2454,
-    "article_count": 32,
+    "avg_sentiment": 0.2323,
+    "article_count": 30,
     "open": 284.45,
     "close": 287.0,
     "pct_change": 0.8965
   },
   {
     "date": "2026-08-04",
-    "avg_sentiment": -0.2362,
-    "article_count": 4,
+    "avg_sentiment": -0.1661,
+    "article_count": 6,
     "open": 286.05,
     "close": 289.0,
     "pct_change": 1.0313
+  },
+  {
+    "date": "2026-08-05",
+    "avg_sentiment": 0.6808,
+    "article_count": 1,
+    "open": 288.25,
+    "close": 286.95,
+    "pct_change": -0.451
   },
   {
     "date": "2026-08-06",
@@ -121,8 +121,8 @@
   },
   {
     "date": "2026-08-10",
-    "avg_sentiment": -0.0406,
-    "article_count": 3,
+    "avg_sentiment": -0.0609,
+    "article_count": 2,
     "open": 286.1,
     "close": 282.65,
     "pct_change": -1.2059

@@ -1,8 +1,8 @@
 [
   {
     "date": "2026-07-15",
-    "avg_sentiment": 0.1219,
-    "article_count": 4,
+    "avg_sentiment": 0.1626,
+    "article_count": 3,
     "open": 285.0,
     "close": 294.8,
     "pct_change": 3.4386
@@ -25,24 +25,24 @@
   },
   {
     "date": "2026-07-22",
-    "avg_sentiment": 0.3036,
-    "article_count": 18,
+    "avg_sentiment": 0.2745,
+    "article_count": 19,
     "open": 287.8,
     "close": 284.4,
     "pct_change": -1.1814
   },
   {
     "date": "2026-07-23",
-    "avg_sentiment": 0.4791,
-    "article_count": 15,
+    "avg_sentiment": 0.4677,
+    "article_count": 16,
     "open": 289.85,
     "close": 287.1,
     "pct_change": -0.9488
   },
   {
     "date": "2026-07-24",
-    "avg_sentiment": -0.0241,
-    "article_count": 6,
+    "avg_sentiment": 0.0592,
+    "article_count": 5,
     "open": 285.0,
     "close": 280.0,
     "pct_change": -1.7544
@@ -57,15 +57,15 @@
   },
   {
     "date": "2026-07-28",
-    "avg_sentiment": -0.0386,
-    "article_count": 3,
+    "avg_sentiment": 0.1012,
+    "article_count": 2,
     "open": 295.7,
     "close": 308.35,
     "pct_change": 4.278
   },
   {
     "date": "2026-07-29",
-    "avg_sentiment": -0.0987,
+    "avg_sentiment": -0.144,
     "article_count": 5,
     "open": 309.9,
     "close": 311.8,
@@ -81,8 +81,8 @@
   },
   {
     "date": "2026-08-03",
-    "avg_sentiment": 0.2202,
-    "article_count": 2,
+    "avg_sentiment": 0.0,
+    "article_count": 1,
     "open": 303.5,
     "close": 310.5,
     "pct_change": 2.3064
@@ -90,7 +90,7 @@
   {
     "date": "2026-08-04",
     "avg_sentiment": 0.0,
-    "article_count": 3,
+    "article_count": 2,
     "open": 311.0,
     "close": 312.4,
     "pct_change": 0.4502

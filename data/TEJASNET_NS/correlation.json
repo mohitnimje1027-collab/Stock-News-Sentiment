@@ -2,7 +2,7 @@
   "name": "Tejas Networks",
   "ticker": "TEJASNET.NS",
   "num_days": 9,
-  "same_day_correlation": 0.0661,
-  "lagged_correlation": -0.4057,
-  "positivity_index": 6.2
+  "same_day_correlation": 0.2165,
+  "lagged_correlation": -0.702,
+  "positivity_index": 5.9
 }

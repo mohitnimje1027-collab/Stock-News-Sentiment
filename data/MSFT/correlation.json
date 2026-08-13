@@ -1,8 +1,8 @@
 {
   "name": "Microsoft",
   "ticker": "MSFT",
-  "num_days": 11,
-  "same_day_correlation": -0.1879,
-  "lagged_correlation": 0.3393,
-  "positivity_index": 4.8
+  "num_days": 12,
+  "same_day_correlation": -0.3058,
+  "lagged_correlation": 0.37,
+  "positivity_index": 5.0
 }

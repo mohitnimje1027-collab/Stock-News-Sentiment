@@ -3,139 +3,139 @@
     "name": "Tesla",
     "ticker": "TSLA",
     "category": "top",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Adani Power",
     "ticker": "ADANIPOWER.NS",
     "category": "underdog",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Apple",
     "ticker": "AAPL",
     "category": "top",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Microsoft",
     "ticker": "MSFT",
     "category": "top",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Amazon",
     "ticker": "AMZN",
     "category": "top",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Reliance Industries",
     "ticker": "RELIANCE.NS",
     "category": "top",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "TCS",
     "ticker": "TCS.NS",
     "category": "top",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Infosys",
     "ticker": "INFY.NS",
     "category": "top",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Alphabet",
     "ticker": "GOOGL",
     "category": "top",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Nvidia",
     "ticker": "NVDA",
     "category": "top",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "HDFC Bank",
     "ticker": "HDFCBANK.NS",
     "category": "top",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "ITC",
     "ticker": "ITC.NS",
     "category": "top",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Adani Enterprises",
     "ticker": "ADANIENT.NS",
     "category": "top",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Zomato (Eternal)",
     "ticker": "ETERNAL.NS",
     "category": "underdog",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Paytm",
     "ticker": "PAYTM.NS",
     "category": "underdog",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "IRCTC",
     "ticker": "IRCTC.NS",
     "category": "underdog",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Delhivery",
     "ticker": "DELHIVERY.NS",
     "category": "underdog",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Route Mobile",
     "ticker": "ROUTE.NS",
     "category": "underdog",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Happiest Minds",
     "ticker": "HAPPSTMNDS.NS",
     "category": "underdog",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Latent View Analytics",
     "ticker": "LATENTVIEW.NS",
     "category": "underdog",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Tejas Networks",
     "ticker": "TEJASNET.NS",
     "category": "underdog",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "CarTrade Tech",
     "ticker": "CARTRADE.NS",
     "category": "underdog",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Angel One",
     "ticker": "ANGELONE.NS",
     "category": "underdog",
-    "last_updated": "2026-08-12"
+    "last_updated": "2026-08-13"
   },
   {
     "name": "Yatra Online",
@@ -178,5 +178,17 @@
     "ticker": "BANDHANBNK.NS",
     "category": "custom",
     "last_updated": "2026-08-12"
+  },
+  {
+    "name": "KOTAKBANK",
+    "ticker": "KOTAKBANK.NS",
+    "category": "custom",
+    "last_updated": "2026-08-13"
+  },
+  {
+    "name": "TATAPOWER",
+    "ticker": "TATAPOWER.NS",
+    "category": "custom",
+    "last_updated": "2026-08-13"
   }
 ]

@@ -1,8 +1,8 @@
 {
   "name": "Apple",
   "ticker": "AAPL",
-  "num_days": 11,
-  "same_day_correlation": 0.0643,
-  "lagged_correlation": -0.0237,
-  "positivity_index": 5.1
+  "num_days": 15,
+  "same_day_correlation": 0.2421,
+  "lagged_correlation": 0.0748,
+  "positivity_index": 5.0
 }

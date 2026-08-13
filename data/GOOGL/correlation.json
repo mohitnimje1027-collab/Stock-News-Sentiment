@@ -1,8 +1,8 @@
 {
   "name": "Alphabet",
   "ticker": "GOOGL",
-  "num_days": 17,
-  "same_day_correlation": 0.2667,
-  "lagged_correlation": -0.5149,
-  "positivity_index": 5.3
+  "num_days": 18,
+  "same_day_correlation": 0.1225,
+  "lagged_correlation": -0.0565,
+  "positivity_index": 4.9
 }

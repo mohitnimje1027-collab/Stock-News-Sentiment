@@ -1,16 +1,16 @@
 [
   {
     "date": "2026-07-20",
-    "avg_sentiment": 0.0755,
-    "article_count": 40,
+    "avg_sentiment": 0.1014,
+    "article_count": 37,
     "open": 790.0,
     "close": 777.6,
     "pct_change": -1.5696
   },
   {
     "date": "2026-07-21",
-    "avg_sentiment": -0.0913,
-    "article_count": 15,
+    "avg_sentiment": -0.119,
+    "article_count": 14,
     "open": 769.15,
     "close": 761.45,
     "pct_change": -1.0011
@@ -49,19 +49,27 @@
   },
   {
     "date": "2026-07-28",
-    "avg_sentiment": 0.1767,
-    "article_count": 5,
+    "avg_sentiment": 0.1472,
+    "article_count": 6,
     "open": 732.0,
     "close": 735.4,
     "pct_change": 0.4645
   },
   {
     "date": "2026-07-30",
-    "avg_sentiment": 0.4629,
+    "avg_sentiment": 0.2929,
     "article_count": 2,
     "open": 752.8,
     "close": 753.95,
     "pct_change": 0.1528
+  },
+  {
+    "date": "2026-07-31",
+    "avg_sentiment": 0.5719,
+    "article_count": 1,
+    "open": 753.95,
+    "close": 748.15,
+    "pct_change": -0.7693
   },
   {
     "date": "2026-08-03",
@@ -73,24 +81,16 @@
   },
   {
     "date": "2026-08-04",
-    "avg_sentiment": 0.4037,
-    "article_count": 2,
+    "avg_sentiment": 0.2691,
+    "article_count": 3,
     "open": 753.2,
     "close": 742.0,
     "pct_change": -1.487
   },
   {
-    "date": "2026-08-06",
-    "avg_sentiment": -0.4215,
-    "article_count": 1,
-    "open": 739.0,
-    "close": 734.3,
-    "pct_change": -0.636
-  },
-  {
     "date": "2026-08-07",
-    "avg_sentiment": 0.148,
-    "article_count": 2,
+    "avg_sentiment": 0.0987,
+    "article_count": 3,
     "open": 733.0,
     "close": 731.0,
     "pct_change": -0.2729
@@ -106,9 +106,17 @@
   {
     "date": "2026-08-11",
     "avg_sentiment": -0.2732,
-    "article_count": 1,
+    "article_count": 2,
     "open": 730.5,
     "close": 729.0,
     "pct_change": -0.2053
+  },
+  {
+    "date": "2026-08-12",
+    "avg_sentiment": -0.1366,
+    "article_count": 2,
+    "open": 729.0,
+    "close": 729.0,
+    "pct_change": 0.0
   }
 ]

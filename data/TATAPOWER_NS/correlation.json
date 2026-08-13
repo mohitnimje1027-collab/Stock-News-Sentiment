@@ -1,0 +1,8 @@
+{
+  "name": "TATAPOWER",
+  "ticker": "TATAPOWER.NS",
+  "num_days": 18,
+  "same_day_correlation": 0.2987,
+  "lagged_correlation": -0.3391,
+  "positivity_index": 6.1
+}

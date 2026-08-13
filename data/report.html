@@ -4,36 +4,51 @@
 <meta charset="UTF-8">
 <title>Stock News Sentiment vs Price Movement — Report</title>
 <style>
-  body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; color: #222; }
-  h1 { color: #1f3864; }
-  .updated { color: #666; font-size: 0.9em; margin-bottom: 10px; }
-  button { background: #1f3864; color: white; border: none; padding: 12px 24px; font-size: 1em;
+  body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px;
+          background: #121212; color: #e0e0e0; }
+  h1 { color: #7fb3ff; }
+  h2 { color: #7fb3ff; }
+  .updated { color: #999; font-size: 0.9em; margin-bottom: 10px; }
+  button { background: #2d5fa3; color: white; border: none; padding: 12px 24px; font-size: 1em;
             border-radius: 6px; cursor: pointer; margin-bottom: 25px; }
-  button:hover { background: #16294d; }
-  button:disabled { background: #999; cursor: not-allowed; }
-  img { max-width: 100%; margin: 20px 0; border: 1px solid #ddd; border-radius: 4px; }
-  .company-card { background: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 6px;
+  button:hover { background: #3a72c4; }
+  button:disabled { background: #555; cursor: not-allowed; }
+  img { max-width: 100%; margin: 20px 0; border: 1px solid #333; border-radius: 4px;
+         background: #fff; padding: 8px; }
+  .company-card { background: #1e1e1e; border: 1px solid #333; border-radius: 6px;
                     padding: 14px 18px; margin-bottom: 12px; }
   .company-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-  .company-name { font-weight: bold; font-size: 1.1em; }
+  .company-name { font-weight: bold; font-size: 1.1em; color: #fff; }
   .badge { color: white; font-size: 0.75em; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; }
-  #status { color: #1f3864; font-style: italic; }
-  .search-box { background: #eef2f8; border-radius: 6px; padding: 16px 20px; margin: 25px 0; }
-  .search-box input { padding: 8px 12px; margin-right: 10px; border: 1px solid #ccc; border-radius: 4px; width: 200px; }
+  #status { color: #7fb3ff; font-style: italic; }
+  .search-box { background: #1a2634; border: 1px solid #2d5fa3; border-radius: 6px;
+                  padding: 16px 20px; margin: 25px 0; }
+  .search-box input { padding: 8px 12px; margin-right: 10px; border: 1px solid #444;
+                        border-radius: 4px; width: 200px; background: #2a2a2a; color: #e0e0e0; }
+  .search-box input::placeholder { color: #888; }
 </style>
 </head>
 <body>
   <h1>Stock News Sentiment vs Price Movement</h1>
-  <p class="updated">Last updated: 2026-08-12 10:10 UTC</p>
+  <p class="updated">Last updated: 2026-08-13 05:47 UTC</p>
 
   <button id="fetchBtn" onclick="fetchNews()">Fetch Latest News & Refresh</button>
   <p id="status"></p>
 
   <div class="search-box">
     <h2>Check a Different Stock</h2>
-    <p style="color:#666; font-size:0.9em;">You'll need the company name and its Yahoo Finance ticker symbol (e.g. "Netflix" and "NFLX", or "Wipro" and "WIPRO.NS").</p>
+    <p style="color:#999; font-size:0.9em;">You'll need the company name and its Yahoo Finance ticker symbol (e.g. "Netflix" and "NFLX", or "Wipro" and "WIPRO.NS").</p>
     <input type="text" id="companyName" placeholder="Company name (e.g. Netflix)">
     <input type="text" id="companyTicker" placeholder="Ticker (e.g. NFLX or WIPRO.NS)">
+    <label style="color:#ccc; font-size:0.9em;">News window:
+      <select id="companyDays" style="padding:8px; border-radius:4px; background:#2a2a2a; color:#e0e0e0; border:1px solid #444;">
+        <option value="7">Last 7 days</option>
+        <option value="14">Last 14 days</option>
+        <option value="30" selected>Last 30 days</option>
+        <option value="60">Last 60 days</option>
+        <option value="90">Last 90 days</option>
+      </select>
+    </label>
     <button onclick="addCompany()">Add & Analyze</button>
     <p id="addStatus"></p>
   </div>
@@ -46,17 +61,17 @@
     
         <div class="company-card">
           <div class="company-header">
-            <span class="company-name">CarTrade Tech</span>
-            <span class="badge" style="background:#ff7f0e">underdog</span>
+            <span class="company-name">Microsoft</span>
+            <span class="badge" style="background:#1f77b4">top</span>
           </div>
-          <p>On days with more positive news about CarTrade Tech, its stock price tended to fall. This pattern was weak (based on 14 trading days). Overall, the news coverage for CarTrade Tech had a positivity score of 5.5/10.</p>
+          <p>On days with more positive news about Microsoft, its stock price tended to fall. This pattern was weak (based on 12 trading days). Overall, the news coverage for Microsoft had a positivity score of 5.0/10.</p>
         </div>
         <div class="company-card">
           <div class="company-header">
-            <span class="company-name">Infosys</span>
+            <span class="company-name">HDFC Bank</span>
             <span class="badge" style="background:#1f77b4">top</span>
           </div>
-          <p>On days with more positive news about Infosys, its stock price tended to fall. This pattern was weak (based on 16 trading days). Overall, the news coverage for Infosys had a positivity score of 6.5/10.</p>
+          <p>On days with more positive news about HDFC Bank, its stock price tended to fall. This pattern was weak (based on 15 trading days). Overall, the news coverage for HDFC Bank had a positivity score of 5.9/10.</p>
         </div>
         <div class="company-card">
           <div class="company-header">
@@ -74,24 +89,24 @@
         </div>
         <div class="company-card">
           <div class="company-header">
-            <span class="company-name">Microsoft</span>
+            <span class="company-name">Infosys</span>
             <span class="badge" style="background:#1f77b4">top</span>
           </div>
-          <p>On days with more positive news about Microsoft, its stock price tended to fall. This pattern was very weak, and it's based on a small sample (only 11 trading days), so treat it as a rough signal, not a rule. Overall, the news coverage for Microsoft had a positivity score of 4.8/10.</p>
+          <p>On days with more positive news about Infosys, its stock price tended to fall. This pattern was weak (based on 16 trading days). Overall, the news coverage for Infosys had a positivity score of 6.4/10.</p>
         </div>
         <div class="company-card">
           <div class="company-header">
-            <span class="company-name">Paytm</span>
+            <span class="company-name">CarTrade Tech</span>
             <span class="badge" style="background:#ff7f0e">underdog</span>
           </div>
-          <p>On days with more positive news about Paytm, its stock price tended to fall. This pattern was very weak (based on 13 trading days). Overall, the news coverage for Paytm had a positivity score of 6.2/10.</p>
+          <p>On days with more positive news about CarTrade Tech, its stock price tended to fall. This pattern was very weak (based on 13 trading days). Overall, the news coverage for CarTrade Tech had a positivity score of 5.7/10.</p>
         </div>
         <div class="company-card">
           <div class="company-header">
-            <span class="company-name">TCS</span>
+            <span class="company-name">Nvidia</span>
             <span class="badge" style="background:#1f77b4">top</span>
           </div>
-          <p>On days with more positive news about TCS, its stock price tended to fall. This pattern was very weak (based on 18 trading days). Overall, the news coverage for TCS had a positivity score of 6.1/10.</p>
+          <p>On days with more positive news about Nvidia, its stock price tended to fall. This pattern was very weak (based on 12 trading days). Overall, the news coverage for Nvidia had a positivity score of 5.0/10.</p>
         </div>
         <div class="company-card">
           <div class="company-header">
@@ -102,17 +117,10 @@
         </div>
         <div class="company-card">
           <div class="company-header">
-            <span class="company-name">IRCTC</span>
-            <span class="badge" style="background:#ff7f0e">underdog</span>
-          </div>
-          <p>On days with more positive news about IRCTC, its stock price tended to fall. This pattern was very weak, and it's based on a small sample (only 11 trading days), so treat it as a rough signal, not a rule. Overall, the news coverage for IRCTC had a positivity score of 5.5/10.</p>
-        </div>
-        <div class="company-card">
-          <div class="company-header">
-            <span class="company-name">HDFC Bank</span>
+            <span class="company-name">TCS</span>
             <span class="badge" style="background:#1f77b4">top</span>
           </div>
-          <p>On days with more positive news about HDFC Bank, its stock price tended to fall. This pattern was very weak (based on 14 trading days). Overall, the news coverage for HDFC Bank had a positivity score of 5.7/10.</p>
+          <p>On days with more positive news about TCS, its stock price tended to fall. This pattern was very weak (based on 18 trading days). Overall, the news coverage for TCS had a positivity score of 6.1/10.</p>
         </div>
         <div class="company-card">
           <div class="company-header">
@@ -123,73 +131,80 @@
         </div>
         <div class="company-card">
           <div class="company-header">
-            <span class="company-name">Nvidia</span>
-            <span class="badge" style="background:#1f77b4">top</span>
-          </div>
-          <p>On days with more positive news about Nvidia, its stock price tended to fall. This pattern was very weak, and it's based on a small sample (only 11 trading days), so treat it as a rough signal, not a rule. Overall, the news coverage for Nvidia had a positivity score of 5.3/10.</p>
-        </div>
-        <div class="company-card">
-          <div class="company-header">
-            <span class="company-name">Route Mobile</span>
+            <span class="company-name">IRCTC</span>
             <span class="badge" style="background:#ff7f0e">underdog</span>
           </div>
-          <p>On days with more positive news about Route Mobile, its stock price showed no clear pattern. This pattern was very weak (based on 14 trading days). Overall, the news coverage for Route Mobile had a positivity score of 6.1/10.</p>
-        </div>
-        <div class="company-card">
-          <div class="company-header">
-            <span class="company-name">ITC</span>
-            <span class="badge" style="background:#1f77b4">top</span>
-          </div>
-          <p>On days with more positive news about ITC, its stock price showed no clear pattern. This pattern was very weak (based on 17 trading days). Overall, the news coverage for ITC had a positivity score of 5.6/10.</p>
-        </div>
-        <div class="company-card">
-          <div class="company-header">
-            <span class="company-name">Apple</span>
-            <span class="badge" style="background:#1f77b4">top</span>
-          </div>
-          <p>On days with more positive news about Apple, its stock price tended to rise. This pattern was very weak, and it's based on a small sample (only 11 trading days), so treat it as a rough signal, not a rule. Overall, the news coverage for Apple had a positivity score of 5.1/10.</p>
-        </div>
-        <div class="company-card">
-          <div class="company-header">
-            <span class="company-name">Tejas Networks</span>
-            <span class="badge" style="background:#ff7f0e">underdog</span>
-          </div>
-          <p>On days with more positive news about Tejas Networks, its stock price tended to rise. This pattern was very weak, and it's based on a small sample (only 9 trading days), so treat it as a rough signal, not a rule. Overall, the news coverage for Tejas Networks had a positivity score of 6.2/10.</p>
+          <p>On days with more positive news about IRCTC, its stock price showed no clear pattern. This pattern was very weak, and it's based on a small sample (only 9 trading days), so treat it as a rough signal, not a rule. Overall, the news coverage for IRCTC had a positivity score of 5.6/10.</p>
         </div>
         <div class="company-card">
           <div class="company-header">
             <span class="company-name">Amazon</span>
             <span class="badge" style="background:#1f77b4">top</span>
           </div>
-          <p>On days with more positive news about Amazon, its stock price tended to rise. This pattern was very weak, and it's based on a small sample (only 11 trading days), so treat it as a rough signal, not a rule. Overall, the news coverage for Amazon had a positivity score of 6.1/10.</p>
+          <p>On days with more positive news about Amazon, its stock price showed no clear pattern. This pattern was very weak, and it's based on a small sample (only 11 trading days), so treat it as a rough signal, not a rule. Overall, the news coverage for Amazon had a positivity score of 6.1/10.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Paytm</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about Paytm, its stock price showed no clear pattern. This pattern was very weak (based on 15 trading days). Overall, the news coverage for Paytm had a positivity score of 6.0/10.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">ITC</span>
+            <span class="badge" style="background:#1f77b4">top</span>
+          </div>
+          <p>On days with more positive news about ITC, its stock price tended to rise. This pattern was very weak (based on 17 trading days). Overall, the news coverage for ITC had a positivity score of 5.7/10.</p>
         </div>
         <div class="company-card">
           <div class="company-header">
             <span class="company-name">Adani Power</span>
             <span class="badge" style="background:#ff7f0e">underdog</span>
           </div>
-          <p>On days with more positive news about Adani Power, its stock price tended to rise. This pattern was very weak (based on 20 trading days). Overall, the news coverage for Adani Power had a positivity score of 5.9/10.</p>
+          <p>On days with more positive news about Adani Power, its stock price tended to rise. This pattern was very weak (based on 20 trading days). Overall, the news coverage for Adani Power had a positivity score of 6.0/10.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Route Mobile</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about Route Mobile, its stock price tended to rise. This pattern was very weak (based on 15 trading days). Overall, the news coverage for Route Mobile had a positivity score of 6.0/10.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Alphabet</span>
+            <span class="badge" style="background:#1f77b4">top</span>
+          </div>
+          <p>On days with more positive news about Alphabet, its stock price tended to rise. This pattern was very weak (based on 18 trading days). Overall, the news coverage for Alphabet had a positivity score of 4.9/10.</p>
         </div>
         <div class="company-card">
           <div class="company-header">
             <span class="company-name">Adani Enterprises</span>
             <span class="badge" style="background:#1f77b4">top</span>
           </div>
-          <p>On days with more positive news about Adani Enterprises, its stock price tended to rise. This pattern was very weak (based on 17 trading days). Overall, the news coverage for Adani Enterprises had a positivity score of 5.7/10.</p>
-        </div>
-        <div class="company-card">
-          <div class="company-header">
-            <span class="company-name">Happiest Minds</span>
-            <span class="badge" style="background:#ff7f0e">underdog</span>
-          </div>
-          <p>On days with more positive news about Happiest Minds, its stock price tended to rise. This pattern was very weak, and it's based on a small sample (only 10 trading days), so treat it as a rough signal, not a rule. Overall, the news coverage for Happiest Minds had a positivity score of 7.7/10.</p>
+          <p>On days with more positive news about Adani Enterprises, its stock price tended to rise. This pattern was very weak (based on 18 trading days). Overall, the news coverage for Adani Enterprises had a positivity score of 5.8/10.</p>
         </div>
         <div class="company-card">
           <div class="company-header">
             <span class="company-name">Angel One</span>
             <span class="badge" style="background:#ff7f0e">underdog</span>
           </div>
-          <p>On days with more positive news about Angel One, its stock price tended to rise. This pattern was very weak (based on 17 trading days). Overall, the news coverage for Angel One had a positivity score of 6.7/10.</p>
+          <p>On days with more positive news about Angel One, its stock price tended to rise. This pattern was very weak (based on 18 trading days). Overall, the news coverage for Angel One had a positivity score of 6.6/10.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Tejas Networks</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about Tejas Networks, its stock price tended to rise. This pattern was weak, and it's based on a small sample (only 9 trading days), so treat it as a rough signal, not a rule. Overall, the news coverage for Tejas Networks had a positivity score of 5.9/10.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Latent View Analytics</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about Latent View Analytics, its stock price tended to rise. This pattern was weak (based on 15 trading days). Overall, the news coverage for Latent View Analytics had a positivity score of 5.5/10.</p>
         </div>
         <div class="company-card">
           <div class="company-header">
@@ -200,17 +215,10 @@
         </div>
         <div class="company-card">
           <div class="company-header">
-            <span class="company-name">Alphabet</span>
+            <span class="company-name">Apple</span>
             <span class="badge" style="background:#1f77b4">top</span>
           </div>
-          <p>On days with more positive news about Alphabet, its stock price tended to rise. This pattern was weak (based on 17 trading days). Overall, the news coverage for Alphabet had a positivity score of 5.3/10.</p>
-        </div>
-        <div class="company-card">
-          <div class="company-header">
-            <span class="company-name">Reliance Industries</span>
-            <span class="badge" style="background:#1f77b4">top</span>
-          </div>
-          <p>On days with more positive news about Reliance Industries, its stock price tended to rise. This pattern was weak (based on 17 trading days). Overall, the news coverage for Reliance Industries had a positivity score of 5.7/10.</p>
+          <p>On days with more positive news about Apple, its stock price tended to rise. This pattern was weak (based on 15 trading days). Overall, the news coverage for Apple had a positivity score of 5.0/10.</p>
         </div>
         <div class="company-card">
           <div class="company-header">
@@ -221,6 +229,20 @@
         </div>
         <div class="company-card">
           <div class="company-header">
+            <span class="company-name">Happiest Minds</span>
+            <span class="badge" style="background:#ff7f0e">underdog</span>
+          </div>
+          <p>On days with more positive news about Happiest Minds, its stock price tended to rise. This pattern was weak (based on 12 trading days). Overall, the news coverage for Happiest Minds had a positivity score of 7.5/10.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">Reliance Industries</span>
+            <span class="badge" style="background:#1f77b4">top</span>
+          </div>
+          <p>On days with more positive news about Reliance Industries, its stock price tended to rise. This pattern was weak (based on 19 trading days). Overall, the news coverage for Reliance Industries had a positivity score of 5.7/10.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
             <span class="company-name">ADANIGREEN</span>
             <span class="badge" style="background:#ff7f0e">custom</span>
           </div>
@@ -228,17 +250,17 @@
         </div>
         <div class="company-card">
           <div class="company-header">
-            <span class="company-name">Latent View Analytics</span>
-            <span class="badge" style="background:#ff7f0e">underdog</span>
-          </div>
-          <p>On days with more positive news about Latent View Analytics, its stock price tended to rise. This pattern was weak (based on 16 trading days). Overall, the news coverage for Latent View Analytics had a positivity score of 5.4/10.</p>
-        </div>
-        <div class="company-card">
-          <div class="company-header">
             <span class="company-name">Tesla</span>
             <span class="badge" style="background:#1f77b4">top</span>
           </div>
-          <p>On days with more positive news about Tesla, its stock price tended to rise. This pattern was moderate (based on 16 trading days). Overall, the news coverage for Tesla had a positivity score of 4.9/10.</p>
+          <p>On days with more positive news about Tesla, its stock price tended to rise. This pattern was moderate (based on 17 trading days). Overall, the news coverage for Tesla had a positivity score of 4.9/10.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
+            <span class="company-name">KOTAKBANK</span>
+            <span class="badge" style="background:#ff7f0e">custom</span>
+          </div>
+          <p>On days with more positive news about KOTAKBANK, its stock price tended to rise. This pattern was moderate (based on 13 trading days). Overall, the news coverage for KOTAKBANK had a positivity score of 6.0/10.</p>
         </div>
   </div>
 
@@ -262,6 +284,7 @@
     function addCompany() {
       const name = document.getElementById('companyName').value.trim();
       const ticker = document.getElementById('companyTicker').value.trim();
+      const days = document.getElementById('companyDays').value;
       const status = document.getElementById('addStatus');
 
       if (!name || !ticker) {
@@ -269,11 +292,11 @@
         return;
       }
 
-      status.innerText = "Fetching and analyzing " + name + "... this can take up to a minute.";
+      status.innerText = "Fetching and analyzing " + name + " (last " + days + " days)... this can take up to a minute.";
       fetch('/add_company', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, ticker: ticker })
+        body: JSON.stringify({ name: name, ticker: ticker, days: parseInt(days) })
       })
         .then(r => r.json())
         .then(data => {

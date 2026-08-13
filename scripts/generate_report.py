@@ -119,12 +119,24 @@ def generate_html():
 
   <div class="search-box">
     <h2>Check a Different Stock</h2>
-    <p style="color:#666; font-size:0.9em;">You'll need the company name and its Yahoo Finance ticker symbol (e.g. "Netflix" and "NFLX", or "Wipro" and "WIPRO.NS").</p>
+    <p style="color:#999; font-size:0.9em;">You'll need the company name and its Yahoo Finance ticker symbol (e.g. "Netflix" and "NFLX", or "Wipro" and "WIPRO.NS").</p>
     <input type="text" id="companyName" placeholder="Company name (e.g. Netflix)">
     <input type="text" id="companyTicker" placeholder="Ticker (e.g. NFLX or WIPRO.NS)">
+    <label style="color:#ccc; font-size:0.9em;">News window:
+      <select id="companyDays" style="padding:8px; border-radius:4px; background:#2a2a2a; color:#e0e0e0; border:1px solid #444;">
+        <option value="7">Last 7 days</option>
+        <option value="14">Last 14 days</option>
+        <option value="30" selected>Last 30 days</option>
+        <option value="60">Last 60 days</option>
+        <option value="90">Last 90 days</option>
+      </select>
+    </label>
     <button onclick="addCompany()">Add & Analyze</button>
     <p id="addStatus"></p>
   </div>
+
+  <h2>Your Stocks</h2>
+  <div id="myCompanies"></div>
 
   <h2>Chart</h2>
   <img src="/data/correlation_chart.png" alt="Correlation chart across 25 companies">
@@ -154,6 +166,7 @@ def generate_html():
     function addCompany() {{
       const name = document.getElementById('companyName').value.trim();
       const ticker = document.getElementById('companyTicker').value.trim();
+      const days = document.getElementById('companyDays').value;
       const status = document.getElementById('addStatus');
 
       if (!name || !ticker) {{
@@ -161,25 +174,56 @@ def generate_html():
         return;
       }}
 
-      status.innerText = "Fetching and analyzing " + name + "... this can take up to a minute.";
-      fetch('/add_company', {{
+      status.innerText = "Fetching and analyzing " + name + " (last " + days + " days)... this can take up to a minute.";
+      fetch('/analyze_custom', {{
         method: 'POST',
         headers: {{ 'Content-Type': 'application/json' }},
-        body: JSON.stringify({{ name: name, ticker: ticker }})
+        body: JSON.stringify({{ name: name, ticker: ticker, days: parseInt(days) }})
       }})
         .then(r => r.json())
         .then(data => {{
           if (data.error) {{
             status.innerText = "Error: " + data.error;
           }} else {{
-            status.innerText = "Done! Reloading...";
-            location.reload();
+            status.innerText = "Added!";
+            saveToLocalStorage(data.company);
+            renderCustomCompany(data.company);
+            document.getElementById('companyName').value = '';
+            document.getElementById('companyTicker').value = '';
           }}
         }})
         .catch(err => {{
           status.innerText = "Something went wrong: " + err;
         }});
     }}
+
+    function saveToLocalStorage(company) {{
+      let myStocks = JSON.parse(localStorage.getItem('myStocks') || '[]');
+      myStocks = myStocks.filter(c => c.ticker !== company.ticker);  // avoid duplicates
+      myStocks.push(company);
+      localStorage.setItem('myStocks', JSON.stringify(myStocks));
+    }}
+
+    function renderCustomCompany(c) {{
+      const container = document.getElementById('myCompanies');
+      const card = document.createElement('div');
+      card.className = 'company-card';
+      card.innerHTML = `
+        <div class="company-header">
+          <span class="company-name">${{c.name}}</span>
+          <span class="badge" style="background:#8e44ad">my stock</span>
+        </div>
+        <p>${{c.description}}</p>
+      `;
+      container.appendChild(card);
+    }}
+
+    function loadMyStocks() {{
+      const myStocks = JSON.parse(localStorage.getItem('myStocks') || '[]');
+      myStocks.forEach(c => renderCustomCompany(c));
+    }}
+
+    window.onload = loadMyStocks;
   </script>
 </body>
 </html>"""

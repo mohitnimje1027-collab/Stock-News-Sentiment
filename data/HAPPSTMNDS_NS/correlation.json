@@ -1,8 +1,8 @@
 {
   "name": "Happiest Minds",
   "ticker": "HAPPSTMNDS.NS",
-  "num_days": 10,
-  "same_day_correlation": 0.1604,
-  "lagged_correlation": 0.2875,
-  "positivity_index": 7.7
+  "num_days": 12,
+  "same_day_correlation": 0.3151,
+  "lagged_correlation": 0.0293,
+  "positivity_index": 7.5
 }

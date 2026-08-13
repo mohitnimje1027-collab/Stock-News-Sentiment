@@ -2,7 +2,7 @@
   "name": "ITC",
   "ticker": "ITC.NS",
   "num_days": 17,
-  "same_day_correlation": 0.0272,
-  "lagged_correlation": -0.0049,
-  "positivity_index": 5.6
+  "same_day_correlation": 0.063,
+  "lagged_correlation": 0.1508,
+  "positivity_index": 5.7
 }

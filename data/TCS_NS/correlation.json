@@ -2,7 +2,7 @@
   "name": "TCS",
   "ticker": "TCS.NS",
   "num_days": 18,
-  "same_day_correlation": -0.1241,
-  "lagged_correlation": 0.0474,
+  "same_day_correlation": -0.0976,
+  "lagged_correlation": 0.0787,
   "positivity_index": 6.1
 }

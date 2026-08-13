@@ -31,6 +31,7 @@ def add_company():
     data = request.get_json()
     name = data.get("name", "").strip()
     ticker = data.get("ticker", "").strip()
+    days_back = int(data.get("days", 29))
 
     if not name or not ticker:
         return jsonify({"error": "Missing name or ticker"}), 400
@@ -52,7 +53,7 @@ def add_company():
 
     # Run the pipeline for just this one company
     from pipeline import run_company
-    result = run_company(name, ticker)
+    result = run_company(name, ticker, days_back=days_back, price_days_back=days_back + 10)
 
     if not result or result.get("num_days", 0) < 3:
         return jsonify({"error": f"Not enough data found for {name} ({ticker}). Try a different ticker."}), 400
@@ -73,6 +74,30 @@ def add_company():
     subprocess.run([sys.executable, str(BASE / "scripts" / "visualize.py")])
 
     return jsonify({"status": "done", "company": name})
+
+@app.route("/analyze_custom", methods=["POST"])
+def analyze_custom():
+    from flask import request
+    from pipeline import run_company
+
+    data = request.get_json()
+    name = data.get("name", "").strip()
+    ticker = data.get("ticker", "").strip()
+    days_back = int(data.get("days", 29))
+
+    if not name or not ticker:
+        return jsonify({"error": "Missing name or ticker"}), 400
+
+    result = run_company(name, ticker, days_back=days_back, price_days_back=days_back + 10)
+
+    if not result or result.get("num_days", 0) < 3:
+        return jsonify({"error": f"Not enough data found for {name} ({ticker}). Try a different ticker."}), 400
+
+    from generate_report import describe_company
+    result["category"] = "custom"
+    result["description"] = describe_company(result)
+
+    return jsonify({"status": "done", "company": result})
 
 if __name__ == "__main__":
     print("Starting server... open http://127.0.0.1:5000 in your browser")

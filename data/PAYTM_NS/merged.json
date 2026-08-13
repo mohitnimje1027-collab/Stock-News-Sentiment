@@ -9,24 +9,24 @@
   },
   {
     "date": "2026-07-16",
-    "avg_sentiment": 0.631,
-    "article_count": 9,
+    "avg_sentiment": 0.6126,
+    "article_count": 8,
     "open": 1387.0,
     "close": 1361.1,
     "pct_change": -1.8673
   },
   {
     "date": "2026-07-20",
-    "avg_sentiment": 0.4291,
-    "article_count": 14,
+    "avg_sentiment": 0.3962,
+    "article_count": 12,
     "open": 1350.0,
     "close": 1347.5,
     "pct_change": -0.1852
   },
   {
     "date": "2026-07-21",
-    "avg_sentiment": 0.4177,
-    "article_count": 18,
+    "avg_sentiment": 0.3514,
+    "article_count": 16,
     "open": 1337.0,
     "close": 1300.5,
     "pct_change": -2.73
@@ -48,8 +48,16 @@
     "pct_change": -1.0472
   },
   {
+    "date": "2026-07-24",
+    "avg_sentiment": 0.6124,
+    "article_count": 1,
+    "open": 1246.0,
+    "close": 1283.2,
+    "pct_change": 2.9855
+  },
+  {
     "date": "2026-07-29",
-    "avg_sentiment": -0.0608,
+    "avg_sentiment": 0.0,
     "article_count": 1,
     "open": 1300.0,
     "close": 1330.0,
@@ -57,7 +65,7 @@
   },
   {
     "date": "2026-08-03",
-    "avg_sentiment": 0.1844,
+    "avg_sentiment": 0.2436,
     "article_count": 5,
     "open": 1348.0,
     "close": 1410.0,
@@ -65,15 +73,15 @@
   },
   {
     "date": "2026-08-04",
-    "avg_sentiment": -0.0573,
-    "article_count": 7,
+    "avg_sentiment": -0.0892,
+    "article_count": 8,
     "open": 1436.0,
     "close": 1400.0,
     "pct_change": -2.507
   },
   {
     "date": "2026-08-05",
-    "avg_sentiment": 0.0,
+    "avg_sentiment": 0.3404,
     "article_count": 2,
     "open": 1416.0,
     "close": 1429.0,
@@ -88,9 +96,17 @@
     "pct_change": 0.9097
   },
   {
+    "date": "2026-08-07",
+    "avg_sentiment": 0.0,
+    "article_count": 1,
+    "open": 1425.3,
+    "close": 1441.6,
+    "pct_change": 1.1436
+  },
+  {
     "date": "2026-08-10",
-    "avg_sentiment": 0.2092,
-    "article_count": 24,
+    "avg_sentiment": 0.1917,
+    "article_count": 23,
     "open": 1445.0,
     "close": 1584.1,
     "pct_change": 9.6263

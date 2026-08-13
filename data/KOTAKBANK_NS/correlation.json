@@ -1,0 +1,8 @@
+{
+  "name": "KOTAKBANK",
+  "ticker": "KOTAKBANK.NS",
+  "num_days": 13,
+  "same_day_correlation": 0.4836,
+  "lagged_correlation": -0.3993,
+  "positivity_index": 6.0
+}

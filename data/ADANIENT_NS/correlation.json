@@ -1,8 +1,8 @@
 {
   "name": "Adani Enterprises",
   "ticker": "ADANIENT.NS",
-  "num_days": 17,
-  "same_day_correlation": 0.0834,
-  "lagged_correlation": 0.1748,
-  "positivity_index": 5.7
+  "num_days": 18,
+  "same_day_correlation": 0.1376,
+  "lagged_correlation": 0.0377,
+  "positivity_index": 5.8
 }

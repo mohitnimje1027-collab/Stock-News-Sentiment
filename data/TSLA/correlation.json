@@ -1,8 +1,8 @@
 {
   "name": "Tesla",
   "ticker": "TSLA",
-  "num_days": 16,
-  "same_day_correlation": 0.534,
-  "lagged_correlation": 0.0783,
+  "num_days": 17,
+  "same_day_correlation": 0.413,
+  "lagged_correlation": 0.1146,
   "positivity_index": 4.9
 }
