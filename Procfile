@@ -1,1 +1,1 @@
-web: gunicorn --chdir scripts app:app
+web: gunicorn --chdir scripts app:app --timeout 120

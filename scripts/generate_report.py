@@ -174,7 +174,8 @@ def generate_html():
         return;
       }}
 
-      status.innerText = "Fetching and analyzing " + name + " (last " + days + " days)... this can take up to a minute.";
+      status.innerText = "Starting analysis for " + name + "...";
+
       fetch('/analyze_custom', {{
         method: 'POST',
         headers: {{ 'Content-Type': 'application/json' }},
@@ -184,17 +185,46 @@ def generate_html():
         .then(data => {{
           if (data.error) {{
             status.innerText = "Error: " + data.error;
-          }} else {{
-            status.innerText = "Added!";
-            saveToLocalStorage(data.company);
-            renderCustomCompany(data.company);
-            document.getElementById('companyName').value = '';
-            document.getElementById('companyTicker').value = '';
+            return;
           }}
+          pollJob(data.job_id, name, status);
         }})
         .catch(err => {{
           status.innerText = "Something went wrong: " + err;
         }});
+    }}
+
+    function pollJob(jobId, name, status) {{
+      let attempts = 0;
+      const interval = setInterval(() => {{
+        attempts++;
+        fetch('/job_status/' + jobId)
+          .then(r => r.json())
+          .then(job => {{
+            if (job.status === "running") {{
+              status.innerText = "Still analyzing " + name + "... (" + attempts * 3 + "s elapsed)";
+            }} else if (job.status === "done") {{
+              clearInterval(interval);
+              status.innerText = "Added!";
+              saveToLocalStorage(job.result);
+              renderCustomCompany(job.result);
+              document.getElementById('companyName').value = '';
+              document.getElementById('companyTicker').value = '';
+            }} else if (job.status === "error") {{
+              clearInterval(interval);
+              status.innerText = "Error: " + job.error;
+            }}
+          }})
+          .catch(err => {{
+            clearInterval(interval);
+            status.innerText = "Lost connection while checking status.";
+          }});
+
+        if (attempts > 40) {{  // ~2 minutes safety cutoff
+          clearInterval(interval);
+          status.innerText = "Taking too long — please try again.";
+        }}
+      }}, 3000);  // check every 3 seconds
     }}
 
     function saveToLocalStorage(company) {{
