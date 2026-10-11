@@ -30,7 +30,7 @@
 </head>
 <body>
   <h1>Stock News Sentiment vs Price Movement</h1>
-  <p class="updated">Last updated: 2026-08-13 05:47 UTC</p>
+  <p class="updated">Last updated: 2026-10-11 10:02 UTC</p>
 
   <button id="fetchBtn" onclick="fetchNews()">Fetch Latest News & Refresh</button>
   <p id="status"></p>
@@ -52,6 +52,9 @@
     <button onclick="addCompany()">Add & Analyze</button>
     <p id="addStatus"></p>
   </div>
+
+  <h2>Your Stocks</h2>
+  <div id="myCompanies"></div>
 
   <h2>Chart</h2>
   <img src="/data/correlation_chart.png" alt="Correlation chart across 25 companies">
@@ -229,6 +232,13 @@
         </div>
         <div class="company-card">
           <div class="company-header">
+            <span class="company-name">TATAPOWER</span>
+            <span class="badge" style="background:#ff7f0e">custom</span>
+          </div>
+          <p>On days with more positive news about TATAPOWER, its stock price tended to rise. This pattern was weak (based on 18 trading days). Overall, the news coverage for TATAPOWER had a positivity score of 6.1/10.</p>
+        </div>
+        <div class="company-card">
+          <div class="company-header">
             <span class="company-name">Happiest Minds</span>
             <span class="badge" style="background:#ff7f0e">underdog</span>
           </div>
@@ -292,8 +302,9 @@
         return;
       }
 
-      status.innerText = "Fetching and analyzing " + name + " (last " + days + " days)... this can take up to a minute.";
-      fetch('/add_company', {
+      status.innerText = "Starting analysis for " + name + "...";
+
+      fetch('/analyze_custom', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: name, ticker: ticker, days: parseInt(days) })
@@ -302,15 +313,75 @@
         .then(data => {
           if (data.error) {
             status.innerText = "Error: " + data.error;
-          } else {
-            status.innerText = "Done! Reloading...";
-            location.reload();
+            return;
           }
+          pollJob(data.job_id, name, status);
         })
         .catch(err => {
           status.innerText = "Something went wrong: " + err;
         });
     }
+
+    function pollJob(jobId, name, status) {
+      let attempts = 0;
+      const interval = setInterval(() => {
+        attempts++;
+        fetch('/job_status/' + jobId)
+          .then(r => r.json())
+          .then(job => {
+            if (job.status === "running") {
+              status.innerText = "Still analyzing " + name + "... (" + attempts * 3 + "s elapsed)";
+            } else if (job.status === "done") {
+              clearInterval(interval);
+              status.innerText = "Added!";
+              saveToLocalStorage(job.result);
+              renderCustomCompany(job.result);
+              document.getElementById('companyName').value = '';
+              document.getElementById('companyTicker').value = '';
+            } else if (job.status === "error") {
+              clearInterval(interval);
+              status.innerText = "Error: " + job.error;
+            }
+          })
+          .catch(err => {
+            clearInterval(interval);
+            status.innerText = "Lost connection while checking status.";
+          });
+
+        if (attempts > 40) {  // ~2 minutes safety cutoff
+          clearInterval(interval);
+          status.innerText = "Taking too long — please try again.";
+        }
+      }, 3000);  // check every 3 seconds
+    }
+
+    function saveToLocalStorage(company) {
+      let myStocks = JSON.parse(localStorage.getItem('myStocks') || '[]');
+      myStocks = myStocks.filter(c => c.ticker !== company.ticker);  // avoid duplicates
+      myStocks.push(company);
+      localStorage.setItem('myStocks', JSON.stringify(myStocks));
+    }
+
+    function renderCustomCompany(c) {
+      const container = document.getElementById('myCompanies');
+      const card = document.createElement('div');
+      card.className = 'company-card';
+      card.innerHTML = `
+        <div class="company-header">
+          <span class="company-name">${c.name}</span>
+          <span class="badge" style="background:#8e44ad">my stock</span>
+        </div>
+        <p>${c.description}</p>
+      `;
+      container.appendChild(card);
+    }
+
+    function loadMyStocks() {
+      const myStocks = JSON.parse(localStorage.getItem('myStocks') || '[]');
+      myStocks.forEach(c => renderCustomCompany(c));
+    }
+
+    window.onload = loadMyStocks;
   </script>
 </body>
 </html>

@@ -1,3 +1,32 @@
+# Environment variables & secrets
 .env
+.env.local
+*.env
+
+# Python bytecode & cache
 __pycache__/
+*.py[cod]
+*$py.class
 *.pyc
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Distribution & packages
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# IDE & OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
